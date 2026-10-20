@@ -1,0 +1,2738 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#8d5b35">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta property="og:title" content="مدونات فخري | مدونات فلسفية تفاعلية للبكالوريا">
+  <meta property="og:description" content="مدونات فلسفية تفاعلية وألعاب بطاقات لتلاميذ البكالوريا، اختبر معلوماتك فوراً داخل واتساب!">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_AR">
+  <title>مدونات فخري | مدونات فلسفية تفاعلية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { box-sizing: border-box; font-family: 'Cairo', system-ui, -apple-system, sans-serif; }
+    .pixel-shadow { box-shadow: 4px 4px 0 0 #1e293b; }
+    .pixel-bevel { box-shadow: inset 2px 2px 0 0 rgba(255,255,255,0.4), inset -2px -2px 0 0 rgba(0,0,0,0.3), 4px 4px 0 0 #1e293b; }
+    .pixel-press:active { transform: translate(2px, 2px); box-shadow: 0 0 0 0 #1e293b; }
+
+    /* Authentic Warm Light Brown (بني فاتح حقيقي متناسق وليس برتقالياً) */
+    .bg-bac-brown { background-color: #8d5b35; color: #fdf8f4; border-color: #5c351b; }
+    .text-bac-brown { color: #8d5b35; }
+    .border-bac-brown { border-color: #8d5b35; }
+    
+    /* Clean Upright Classic Heart Splitting Smoothly Down the Center */
+    @keyframes heartSplitLeft {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      35% { transform: translate(-8px, 0) rotate(-4deg); }
+      70% { transform: translate(-6px, 0) rotate(-2deg); }
+      100% { transform: translate(-8px, 0) rotate(-4deg); }
+    }
+    @keyframes heartSplitRight {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      35% { transform: translate(8px, 0) rotate(4deg); }
+      70% { transform: translate(6px, 0) rotate(2deg); }
+      100% { transform: translate(8px, 0) rotate(4deg); }
+    }
+    @keyframes goldCupRadiance {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      25% { transform: scale(1.15) rotate(-4deg) translateY(-6px); }
+      75% { transform: scale(1.12) rotate(4deg) translateY(-4px); }
+    }
+    @keyframes cardShake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-8px); }
+      40%, 80% { transform: translateX(8px); }
+    }
+
+    .heart-half-left {
+      transform-origin: 32px 54px;
+      animation: heartSplitLeft 1.1s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+    }
+    .heart-half-right {
+      transform-origin: 32px 54px;
+      animation: heartSplitRight 1.1s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+    }
+    .gold-cup-animation { animation: goldCupRadiance 1.4s ease-in-out infinite; }
+    .card-shaking { animation: cardShake 0.55s ease-in-out; }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-900 min-h-screen flex flex-col antialiased selection:bg-amber-500 selection:text-white">
+
+  <!-- Top Header Navigation -->
+  <header class="sticky top-0 z-30 bg-white border-b-2 border-slate-900 px-3 py-2.5 pixel-shadow">
+    <div class="max-w-xl mx-auto flex items-center justify-between gap-2">
+      <!-- Quick Exit Button -->
+      <button onclick="handleExit()" class="flex items-center gap-1 px-3 py-1 text-xs font-black text-rose-700 bg-rose-50 hover:bg-rose-100 border border-rose-300 pixel-press">
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        <span>إغلاق</span>
+      </button>
+
+      <!-- Brand Logo & Name with Authentic Warm Light Brown BAC Badge -->
+      <div onclick="showHome()" class="flex items-center gap-2 cursor-pointer">
+        <div class="bg-bac-brown font-black border-2 pixel-bevel pixel-shadow w-7 h-7 text-[10px] flex items-center justify-center shrink-0 tracking-wider">
+          BAC
+        </div>
+        <span class="font-black text-base text-slate-900">مدونات فخري</span>
+      </div>
+
+      <!-- Admin Button -->
+      <button onclick="showAdmin()" class="flex items-center gap-1.5 px-2.5 py-1 text-xs font-bold bg-slate-100 hover:bg-slate-200 border border-slate-800 pixel-press text-slate-900">
+        <svg class="w-3.5 h-3.5 text-amber-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        <span>لوحة التحكم</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Dynamic Main Container -->
+  <main id="app" class="flex-1 max-w-5xl w-full mx-auto p-3 sm:p-4 flex flex-col"></main>
+
+  <!-- Global Modal Dialog Container -->
+  <div id="modalContainer" class="hidden"></div>
+
+  <script>
+    // Audio Synthesizer (Safe initialization for mobile browsers & in-app webviews)
+    let audioCtx = null;
+    try {
+      const AudioCtxClass = window.AudioContext || window.webkitAudioContext;
+      if (AudioCtxClass) {
+        audioCtx = new AudioCtxClass();
+      }
+    } catch(e) {
+      console.warn('AudioContext not supported or restricted', e);
+    }
+    function playCorrectSound() {
+      if (!audioCtx) return;
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const notes = [523.25, 659.25, 783.99, 1046.5];
+      const now = audioCtx.currentTime;
+      notes.forEach((f, i) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.frequency.setValueAtTime(f, now + i * 0.08);
+        gain.gain.setValueAtTime(0.2, now + i * 0.08);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.08 + 0.3);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start(now + i * 0.08);
+        osc.stop(now + i * 0.08 + 0.32);
+      });
+    }
+
+    function playWrongSound() {
+      if (!audioCtx) return;
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const now = audioCtx.currentTime;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(240, now);
+      osc.frequency.exponentialRampToValueAtTime(90, now + 0.45);
+      gain.gain.setValueAtTime(0.25, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.45);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start(now);
+      osc.stop(now + 0.46);
+    }
+
+    function handleExit() {
+      if (confirm("هل تريد إغلاق المدونة التفاعلية والعودة إلى تطبيق واتساب؟")) {
+        try { window.close(); } catch(e){}
+        try { window.history.back(); } catch(e){}
+        window.location.href = "whatsapp://";
+      }
+    }
+
+    // Default Philosophy Topics & Interactive Blogs
+    const initialQuizzes = [
+      {
+        id: 'falsafa-cards-matching-01',
+        title: 'لعبة مطابقة بطاقات الفلاسفة والأطروحات',
+        category: 'الإنية والغيرية',
+        description: 'لعبة بطاقات تفاعلية ممتعة: اضغط على كل فيلسوف وطابقه مع أطروحته الفلسفية بدقة وسرعة!',
+        blogType: 'matching_cards',
+        matchingPairs: [
+          { id: 'p1', itemA: 'رينيه ديكارت', itemB: 'الكوجيتو: أنا أفكر إذن أنا كائن مفكر', suit: '♥' },
+          { id: 'p2', itemA: 'باروخ سبينوزا', itemB: 'الحرية وهم ناشئ عن الجهل بالعلل', suit: '♦' },
+          { id: 'p3', itemA: 'موريس ميرلوبونتي', itemB: 'أنا لست أمام جسدي بل أنا جسدي المعاش', suit: '♣' },
+          { id: 'p4', itemA: 'جان بول سارتر', itemB: 'الوجود يسبق الماهية والإنسان محكوم بحريته', suit: '♠' },
+          { id: 'p5', itemA: 'فريدريك هيغل', itemB: 'جدلية السيد والعبد وصراع الاعتراف', suit: '♥' },
+          { id: 'p6', itemA: 'توماس هوبز', itemB: 'العقد الاجتماعي للخروج من حرب الكل ضد الكل', suit: '♦' }
+        ],
+        questions: []
+      },
+      {
+        id: 'aniyya-ghayriyya',
+        title: 'الإنية والغيرية: الوعي، الجسد، والآخر',
+        category: 'الإنية والغيرية',
+        description: 'مدونة تفاعلية شاملة لمراجعة إشكاليات الإنية وعلاقة الأنا بالغير في الفلسفة.',
+        blogType: 'standard',
+        questions: [
+          {
+            q: 'يرى ديكارت في أطروحة الكوجيتو أن إثبات الإنية والذات المفكرة يتأسس بالدرجة الأولى على:',
+            options: [
+              'الشك المنهجي والتفكير العقلي المجرد بمعزل عن الحواس والجسد',
+              'المشاهدة الحسية والملاحظة التجريبية المباشرة للجسد',
+              'علاقة الصراع الجدلي مع الغير والاعتراف المتبادل',
+              'الانتماء الاجتماعي والثقافي للجماعة التاريخية'
+            ],
+            correct: 0,
+            exp: 'ينطلق ديكارت من الشك المنهجي ليثبت أن "أنا أفكر إذن أنا كائن مفكر (جوهر مفكر)".'
+          },
+          {
+            q: 'في فلسفة هيغل، يتحقق وعي الذات بإنيتها ليس بالعزلة بل من خلال:',
+            options: [
+              'الانكفاء الباطني والتأمل الصوفي الهادئ',
+              'جدلية السيد والعبد وصراع الاعتراف مع الغير',
+              'الاكتفاء بالرغبة البيولوجية واستهلاك الطبيعة',
+              'المطابقة التامة بين الفكر واللغة'
+            ],
+            correct: 1,
+            exp: 'يؤكد هيغل أن الوعي بالذات يتطلب اعترافاً متبادلاً يمر عبر صراع حتى الموت في جدلية السيد والعبد.'
+          },
+          {
+            q: 'ما هو الموقف الفينومينولوجي لدى ميرلوبونتي بخصوص علاقة الأنا بالجسد؟',
+            options: [
+              'الجسد مجرد آلة مادية يمتلكها العقل ويسيطر عليها',
+              'أنا لست أمام جسدي، بل أنا جسدي الخاص المعاش كثقافة ووجود',
+              'الجسد سجن للنفس ومصدر لجميع الأوهام والضلالات',
+              'الجسد ينفصل كلياً عن الوعي ولا صلة بينهما'
+            ],
+            correct: 1,
+            exp: 'يرفض ميرلوبونتي ثنائية ديكارت مؤكداً أن الجسد هو منطلق إدراك العالم ووعينا (أنا جسدي المعاش).'
+          },
+          {
+            q: 'تعتبر مقولة سارتر الشهيرة "الجحيم هم الآخرون" تعبيراً عن أن نظرة الغير للأنا تمثل:',
+            options: [
+              'تشييئاً لحريتي وسلباً لتلقائيتي وتهديداً لامتلاكي لذاتي',
+              'مصدر السلام والوئام المطلق دون أي نزاع وجودي',
+              'دعوة للانسحاب التام من المجتمع والعيش في عزلة دائمة',
+              'ضرورة إلغاء الوعي والعودة إلى الطبيعة الغريزية'
+            ],
+            correct: 0,
+            exp: 'في الوجودية، نظرة الغير تجمد حريتي وتحولني إلى موضوع وشيء بين الأشياء في العالم.'
+          }
+        ]
+      },
+      {
+        id: 'hurriyya-hatmiyya',
+        title: 'الحرية والمسؤولية: الإرادة بين التحرر والحتمية',
+        category: 'الحرية',
+        description: 'مدونة فلسفية دقيقة في مشكلة الحرية، الإرادة الحرة، والحتميات النفسية والبيولوجية والاجتماعية.',
+        blogType: 'standard',
+        questions: [
+          {
+            q: 'يرى سبينوزا أن اعتقاد الإنسان بحريته المطلقة هو مجرد:',
+            options: [
+              'حقيقة يقينية بديهية لا تحتاج لأي برهان عقلي',
+              'وهم ناتج عن جهله بالأسباب والعلل الحتمية التي تحركه',
+              'نتيجة التزامه بالقوانين الأخلاقية والدينية الصارمة',
+              'هبة فطرية يولد بها وتتساوى فيها جميع الكائنات'
+            ],
+            correct: 1,
+            exp: 'يقول سبينوزا إن الناس يعون رغباتهم لكنهم يجهلون الأسباب التي تسيرهم كالحجر الساقط.'
+          },
+          {
+            q: 'تعتبر الأطروحة الوجودية لسارتر أن الإنسان "محكوم عليه بأن يكون حراً"، لأن:',
+            options: [
+              'وجوده يسبق ماهيته وهو مسؤول مسؤولية كاملة عن اختياراته',
+              'الدولة تفرض عليه الحرية بالقوة الدستورية',
+              'الطبيعة البيولوجية تمنحه قدرة غير محدودة على التحكم',
+              'اللاشعور هو الذي يقرر نيابة عنه'
+            ],
+            correct: 0,
+            exp: 'لا توجد ماهية بشرية مسبقة، فالإنسان يوجد أولاً ثم يصنع نفسه باختياراته الحرة وأفعاله.'
+          },
+          {
+            q: 'ما هو الموقف التوفيقي الذي يعبر عنه كانط بخصوص الحرية والحتمية؟',
+            options: [
+              'الإنسان خاضع للحتمية كظاهرة في عالم الطبيعة، وحر ككائن أخلاقي في عالم المعقولات',
+              'لا وجود للحرية ولا وجود للحتمية في الفلسفة النقدية',
+              'الحرية تخص الكائنات غير العاقلة فقط',
+              'الأخلاق تقتضي إلغاء مبدأ العلية في العلوم'
+            ],
+            correct: 0,
+            exp: 'يميز كانط بين الإنسان كظاهرة خاضعة لقوانين الطبيعة، وكشيء في ذاته يتمتع بإرادة حرة مسؤولة.'
+          }
+        ]
+      },
+      {
+        id: 'ad-dawla-wal-haqq',
+        title: 'الدولة والسيادة: الحق، العدالة والمشروعية',
+        category: 'الدولة والسيادة',
+        description: 'اختبار دقيق في فلسفة السياسة: نشأة الدولة، العقد الاجتماعي، والقانون بين القوة والعدل.',
+        blogType: 'standard',
+        questions: [
+          {
+            q: 'يرى توماس هوبز أن الغاية الأساسية لتأسيس الدولة عبر العقد الاجتماعي هي:',
+            options: [
+              'تحقيق الأمن والسلام والخروج من حالة حرب الكل ضد الكل',
+              'إلغاء جميع القوانين وترك الحرية المطلقة لكل فرد',
+              'توزيع الثروات بالتساوي بين كافة طبقات المجتمع',
+              'تشجيع النزاعات الفردية لتطوير القوة الإنسانية'
+            ],
+            correct: 0,
+            exp: 'يؤكد هوبز أن حالة الطبيعة هي حرب الكل ضد الكل، وتأسيس الدولة يضمن حق البقاء والأمن.'
+          },
+          {
+            q: 'في فلسفة جان جاك روسو، تتأسس السيادة والمشروعية في الدولة الديمقراطية على:',
+            options: [
+              'الإرادة العامة التي تعبر عن المصلحة المشتركة للمواطنين',
+              'القوة العسكرية القاهرة للحاكم المطلق',
+              'الانتماء الطبقي أو القبلي للأقوى',
+              'الامتثال الأعمى للتقاليد الموروثة'
+            ],
+            correct: 0,
+            exp: 'يرى روسو أن العقد الاجتماعي يقوم على خضوع الأفراد للإرادة العامة التي يشاركون في صياغتها.'
+          },
+          {
+            q: 'عرّف عالم الاجتماع ماكس فيبر الدولة الحديثة بأنها المؤسسة التي تحتكر بنجاح:',
+            options: [
+              'ممارسة العنف المادي المشروع داخل رقعة جغرافية محددة',
+              'طباعة الكتب وتحديد المناهج التعليمية حصرياً',
+              'الإنتاج الاقتصادي والتجاري دون أي قطاع خاص',
+              'الفصل بين المواطنين على أساس عرقي'
+            ],
+            correct: 0,
+            exp: 'فيبر يؤكد أن الدولة الحديثة تتميز باحتكار استخدام القوة والعنف المادي بطريقة شرعية وقانونية.'
+          }
+        ]
+      },
+      {
+        id: 'tadrib-falsafa-01',
+        title: 'تدريب تطبيقي منهجي: تفكيك الأطروحة الفلسفية',
+        category: 'الإنية والغيرية',
+        description: 'تدريب منهجي متدرج في شكل أوراق عمل تفاعلية لاختبار قدرتك على تفكيك المفاهيم والمواقف الفلسفية.',
+        blogType: 'training',
+        introHeadline: 'تدريب تطبيقي منهجي: تفكيك الإشكالية الفلسفية وتحديد دلالات المفاهيم المحورية',
+        questions: [
+          {
+            q: 'المرحلة الأولى: اقرأ الإقرار التالي وحدد دلالته الفلسفية بدقة:\n"الإنسان كائن محكوم عليه بأن يكون حراً".\nتدل هذه العبارة لدى سارتر على أن:',
+            options: [
+              'الحرية قدر أنطولوجي ملازم للوجود البشري ولا يستطيع الإنسان التملص منها ومسؤوليته عنها مطلقة',
+              'الحرية منحة سياسية تمنحها الدولة للمواطنين وتستردها متى شاءت',
+              'الإنسان كائن مسير وخاضع كلياً لحتميات الطبيعة والوراثة البيولوجية',
+              'الحرية مجرد شعور باطني وهمي يزول عند الاحتكاك بالواقع الاجتماعي'
+            ],
+            correct: 0,
+            exp: 'يقصد سارتر أن الحرية ليست صفة تضاف للإنسان بل هي صميم ماهيته ووجوده الذي يسبق الماهية، لذلك فالإنسان مسؤول مسؤولية تامة عن أفعاله واختياراته.'
+          },
+          {
+            q: 'المرحلة الثانية: بناء على ما سبق، كيف يتحدد موقف الغير في تشكيل وعي الأنا بذاتها؟',
+            options: [
+              'الغير وسيط ضروري لا غنى عنه بيني وبين نفسي، وعبر نظرته واعترافه أعي ذاتي كإنية',
+              'الغير مجرد عائق خارجي يمكن إلغاؤه والاستغناء عنه بالانعزال التام',
+              'العلاقة مع الغير علاقة بيولوجية نفعية تقتصر على حفظ النوع البشري فقط',
+              'الغير كائن متطابق كلياً معي ولا يوجد أي تمايز أو فارق بين وعيي ووعيه'
+            ],
+            correct: 0,
+            exp: 'الغير هو الوسيط الذي أتعرف من خلاله على إنيتي، ونظرة الغير هي المرآة التي تكشف لي أبعادي كما بين ذلك هيغل وسارتر في صراع الاعتراف.'
+          },
+          {
+            q: 'المرحلة الثالثة: إذا كان الجسد ليس مجرد آلة بيولوجية بل جسداً معاشاً (ميرلوبونتي)، فما النتيجة الفلسفية المترتبة على ذلك؟',
+            options: [
+              'تأكيد وحدة الأنا وتجاوز ثنائية النفس والجسد الديكارتية، فالجسد هو نقطة انفتاح الوعي على العالم',
+              'احتقار الجسد واعتباره سجناً وظلمة تعيق النفس العاقلة عن التأمل الخالص',
+              'العودة إلى النزعة المادية الميكانيكية وتفسير الوعي بردود أفعال عصبية صرفة',
+              'الفصل التام بين الإدراك الحسي والتفكير العقلي النظري'
+            ],
+            correct: 0,
+            exp: 'الجسد المعاش لدى الفينومينولوجيا يلغي ثنائية الجوهرين (ديكارت) ويجعل الجسد مركز رسو الوعي في العالم وطريقة إدراكنا له وتواصلنا معه.'
+          }
+        ]
+      }
+    ];
+
+    function getStorageQuizzes() {
+      try {
+        const stored = localStorage.getItem('fakhri_blogs_v6');
+        return stored ? JSON.parse(stored) : initialQuizzes;
+      } catch(e) {
+        return initialQuizzes;
+      }
+    }
+
+    function saveStorageQuizzes(q) {
+      localStorage.setItem('fakhri_blogs_v6', JSON.stringify(q));
+    }
+
+    let currentQuizzes = getStorageQuizzes();
+    let selectedTopic = 'الكل';
+
+    // View Routing
+    function showHome() {
+      const app = document.getElementById('app');
+      currentQuizzes = getStorageQuizzes();
+
+      const topics = ['الكل', ...new Set(currentQuizzes.map(q => q.category).filter(Boolean))];
+
+      let filterPills = '';
+      topics.forEach(t => {
+        const active = selectedTopic === t;
+        filterPills += `
+          <button onclick="setFilterTopic('${t}')" class="px-3 py-1 text-xs font-bold whitespace-nowrap border pixel-press transition-colors ${
+            active ? 'bg-bac-brown pixel-bevel font-extrabold pixel-shadow' : 'bg-white text-slate-600 border-slate-300 hover:bg-slate-50'
+          }">
+            ${t}
+          </button>
+        `;
+      });
+
+      let html = `
+        <div class="bg-white border-2 border-slate-900 p-5 pixel-shadow mb-4 text-center">
+          <!-- Official Modern WhatsApp Vector Badge -->
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-50 border border-emerald-500 text-emerald-800 text-xs font-bold mb-3 pixel-shadow">
+            <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="12" fill="#25D366" />
+              <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.979-.276-.1-.476-.15-.677.15-.2.301-.777.979-.953 1.179-.175.2-.351.226-.652.075-.301-.15-1.27-.468-2.42-1.493-.894-.798-1.498-1.783-1.674-2.084-.175-.3-.019-.463.132-.613.135-.135.301-.351.451-.527.15-.175.2-.301.301-.501.1-.2.05-.376-.025-.527-.075-.15-.677-1.631-.928-2.233-.244-.586-.492-.507-.677-.516-.175-.009-.376-.009-.577-.009-.2 0-.526.075-.802.376-.276.301-1.053 1.029-1.053 2.509 0 1.48 1.078 2.91 1.228 3.111.15.2 2.122 3.24 5.141 4.545.718.311 1.28.497 1.717.636.722.229 1.378.197 1.897.12.578-.086 1.78-.727 2.031-1.43.251-.702.251-1.304.175-1.43-.075-.125-.276-.201-.577-.351z" fill="#ffffff" />
+            </svg>
+            <span>مراجعة سريعة وخفيفة عبر واتساب</span>
+          </div>
+
+          <!-- Hero Brand with Authentic Warm Light Brown BAC Badge -->
+          <div class="flex items-center justify-center gap-2.5 mb-2">
+            <div class="bg-bac-brown font-black border-2 pixel-bevel pixel-shadow w-9 h-9 text-xs flex items-center justify-center shrink-0 tracking-wider">
+              BAC
+            </div>
+            <h1 class="text-2xl md:text-3xl font-black text-slate-900">مدونات فخري</h1>
+          </div>
+          <p class="text-xs md:text-sm text-slate-700 font-semibold max-w-md mx-auto">
+            مدونات فلسفية تفاعلية وألعاب بطاقات ممتعة لتلاميذ البكالوريا، تمنحك فهماً عميقاً وتقييماً فورياً مشوقاً داخل واتساب.
+          </p>
+        </div>
+
+        <div class="space-y-3 mb-4">
+          <input type="text" id="searchInput" oninput="filterQuizzes()" placeholder="ابحث حسب العناوين والمحاور" class="w-full px-3 py-2.5 bg-white border-2 border-slate-900 text-xs md:text-sm font-bold pixel-shadow focus:outline-none">
+          <div class="flex items-center gap-2 overflow-x-auto pb-1.5">
+            ${filterPills}
+          </div>
+        </div>
+
+        <div id="quizListContainer" class="space-y-3 flex-1">
+      `;
+
+      html += renderQuizCards();
+      html += `</div>`;
+      app.innerHTML = html;
+    }
+
+    function setFilterTopic(t) {
+      selectedTopic = t;
+      showHome();
+    }
+
+    function renderQuizCards() {
+      const qText = (document.getElementById('searchInput')?.value || '').trim().toLowerCase();
+      const filtered = currentQuizzes.filter(item => {
+        const matchSearch = item.title.toLowerCase().includes(qText) || (item.category && item.category.toLowerCase().includes(qText));
+        const matchTopic = selectedTopic === 'الكل' || item.category === selectedTopic;
+        return matchSearch && matchTopic;
+      });
+
+      if (filtered.length === 0) {
+        return '<div class="text-center p-6 text-slate-500 font-bold">لا توجد مدونة تفاعلية تطابق البحث!</div>';
+      }
+
+      let html = '';
+      filtered.forEach(q => {
+        const isMatching = q.blogType === 'matching_cards';
+        const isTraining = q.blogType === 'training';
+        const countText = isMatching ? `${q.matchingPairs?.length || 0} أزواج` : isTraining ? `${q.questions?.length || 0} أوراق عمل` : `${q.questions?.length || 0} أسئلة`;
+
+        html += `
+          <div onclick="startActivity('${q.id}')" class="bg-white border-2 border-slate-900 p-4 pixel-shadow hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform cursor-pointer">
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-1.5">
+                <span class="px-2 py-0.5 text-[11px] font-black border" style="background-color: rgba(141, 91, 53, 0.12); color: #6e3c1b; border-color: rgba(141, 91, 53, 0.3);">${q.category || 'فلسفة'}</span>
+                ${isMatching ? '<span class="px-2 py-0.5 bg-yellow-100 text-yellow-900 text-[10px] font-black border border-yellow-400">البطاقات</span>' : isTraining ? '<span class="px-2 py-0.5 bg-sky-100 text-sky-900 text-[10px] font-black border border-sky-400">تدريبات</span>' : '<span class="px-2 py-0.5 bg-orange-100 text-orange-900 text-[10px] font-black border border-orange-400">كويزات</span>'}
+              </div>
+              <span class="text-xs text-slate-500 font-bold">${countText}</span>
+            </div>
+            <h3 class="text-base font-black text-slate-900 mb-1">${q.title}</h3>
+            <p class="text-xs text-slate-600 line-clamp-2 mb-3">${q.description || ''}</p>
+            <div class="flex items-center justify-between pt-2 border-t border-slate-200">
+              <span class="text-[11px] font-bold text-slate-500">تحدي خاص بالبكالوريا</span>
+              <!-- CTA Button in Vibrant Emerald Green -->
+              <span class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs pixel-bevel pixel-press flex items-center gap-1">
+                <span>ابدأ المدونة التفاعلية</span>
+                <span>▶</span>
+              </span>
+            </div>
+          </div>
+        `;
+      });
+      return html;
+    }
+
+    function filterQuizzes() {
+      const container = document.getElementById('quizListContainer');
+      if (container) container.innerHTML = renderQuizCards();
+    }
+
+    function startActivity(id) {
+      const item = currentQuizzes.find(x => x.id === id) || currentQuizzes[0];
+      if (item.blogType === 'matching_cards') {
+        startMatchingGame(item);
+      } else if (item.blogType === 'training') {
+        showTrainingIntro(item);
+      } else {
+        startQuiz(item);
+      }
+    }
+
+    // ==========================================
+    // 🃏 Matching Cards Game Implementation
+    // ==========================================
+    let activeMatchingGame = null;
+    let matchingCards = [];
+    let selectedFirstCard = null;
+    let matchedPairs = [];
+    let matchingMistakes = 0;
+    let isMatchingProcessing = false;
+
+    function startMatchingGame(game) {
+      activeMatchingGame = game;
+      matchedPairs = [];
+      matchingMistakes = 0;
+      selectedFirstCard = null;
+      isMatchingProcessing = false;
+
+      // Build and shuffle cards
+      const suits = ['♥', '♦', '♣', '♠'];
+      const raw = [];
+      (game.matchingPairs || []).forEach((p, i) => {
+        const suit = p.suit || suits[i % suits.length];
+        raw.push({ id: `card-${p.id}-A`, pairId: p.id, text: p.itemA, side: 'A', suit });
+        raw.push({ id: `card-${p.id}-B`, pairId: p.id, text: p.itemB, side: 'B', suit });
+      });
+
+      // Shuffle
+      for (let i = raw.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [raw[i], raw[j]] = [raw[j], raw[i]];
+      }
+      matchingCards = raw;
+
+      renderMatchingView();
+    }
+
+    function renderMatchingView() {
+      const app = document.getElementById('app');
+      const totalPairs = activeMatchingGame.matchingPairs.length;
+      const progress = Math.round((matchedPairs.length / totalPairs) * 100);
+
+      let gridHtml = '';
+      matchingCards.forEach(c => {
+        const isMatched = matchedPairs.includes(c.pairId);
+        const isSelected = selectedFirstCard && selectedFirstCard.id === c.id;
+        const isRed = c.suit === '♥' || c.suit === '♦';
+
+        let cardClass = 'bg-white border-2 border-slate-900 text-slate-900 pixel-press';
+        if (isMatched) {
+          cardClass = 'bg-emerald-50 border-2 border-emerald-600 text-emerald-950 opacity-90 cursor-default';
+        } else if (isSelected) {
+          cardClass = 'bg-amber-50 border-2 border-amber-500 ring-2 ring-amber-400 scale-[1.03] -translate-y-1';
+        }
+
+        gridHtml += `
+          <div id="${c.id}" onclick="handleMatchingCardClick('${c.id}')" class="aspect-[2.3/3.6] p-2 text-center flex flex-col justify-between border-2 transition-all pixel-shadow select-none relative ${cardClass}">
+            <div class="flex items-center justify-between w-full leading-none">
+              <span class="text-xs font-black ${isRed ? 'text-rose-600' : 'text-slate-900'}">${c.suit}</span>
+              ${isMatched ? '<span class="text-[8px] font-black bg-emerald-600 text-white px-1">✓</span>' : ''}
+            </div>
+            <div class="my-auto px-0.5 py-1 flex items-center justify-center">
+              <p class="text-[11px] md:text-xs font-black leading-snug line-clamp-4 text-center">${c.text}</p>
+            </div>
+            <div class="flex items-center justify-between w-full leading-none">
+              <span class="text-[8px] font-bold text-slate-400 uppercase">${c.side === 'A' ? 'مفهوم' : 'أطروحة'}</span>
+              <span class="text-xs font-black ${isRed ? 'text-rose-600' : 'text-slate-900'}">${c.suit}</span>
+            </div>
+          </div>
+        `;
+      });
+
+      app.innerHTML = `
+        <div class="flex flex-col flex-1 pb-16">
+          <div class="bg-white border-2 border-slate-900 p-3.5 pixel-shadow mb-3">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-[10px] font-black px-2 py-0.5 bg-yellow-100 text-yellow-900 border border-yellow-400">البطاقات</span>
+              <div class="flex items-center gap-3 text-xs font-black">
+                <span class="text-emerald-700">المطابقات: ${matchedPairs.length}/${totalPairs}</span>
+                <span class="text-rose-600">الأخطاء: ${matchingMistakes}</span>
+              </div>
+            </div>
+            <h2 class="text-xs md:text-sm font-black text-slate-900">${activeMatchingGame.title}</h2>
+            <p class="text-[11px] text-slate-600 mt-0.5">${activeMatchingGame.description || 'اضغط على بطاقتين متطابقتين للربط بين الفيلسوف وأطروحته!'}</p>
+          </div>
+
+          <div class="grid grid-cols-3 sm:grid-cols-4 gap-2 sm:gap-2.5 flex-1">
+            ${gridHtml}
+          </div>
+        </div>
+
+        <!-- Progress Bottom Bar -->
+        <div class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-slate-900 p-2 pixel-shadow z-20">
+          <div class="max-w-xl mx-auto flex items-center justify-between gap-3 text-xs font-bold">
+            <div class="flex items-center gap-2">
+              <span class="text-slate-500">التقدم:</span>
+              <div class="w-32 h-3 bg-slate-200 border border-slate-900 overflow-hidden">
+                <div class="h-full bg-emerald-500 transition-all duration-300" style="width: ${progress}%"></div>
+              </div>
+              <span class="font-mono text-emerald-700 font-bold">${progress}%</span>
+            </div>
+            <button onclick="startMatchingGame(activeMatchingGame)" class="text-xs text-slate-600 hover:text-slate-900 font-bold underline">إعادة خلط ↺</button>
+          </div>
+        </div>
+      `;
+    }
+
+    function handleMatchingCardClick(cardId) {
+      if (isMatchingProcessing) return;
+      const card = matchingCards.find(c => c.id === cardId);
+      if (!card || matchedPairs.includes(card.pairId)) return;
+      if (selectedFirstCard && selectedFirstCard.id === card.id) return;
+
+      if (!selectedFirstCard) {
+        selectedFirstCard = card;
+        renderMatchingView();
+        return;
+      }
+
+      // Second card clicked -> Compare
+      isMatchingProcessing = true;
+      const el1 = document.getElementById(selectedFirstCard.id);
+      const el2 = document.getElementById(card.id);
+
+      if (selectedFirstCard.pairId === card.pairId) {
+        // MATCH!
+        playCorrectSound();
+        matchedPairs.push(card.pairId);
+        selectedFirstCard = null;
+        isMatchingProcessing = false;
+        renderMatchingView();
+
+        if (matchedPairs.length === activeMatchingGame.matchingPairs.length) {
+          setTimeout(renderMatchingWin, 500);
+        }
+      } else {
+        // MISMATCH! Shake & sound
+        playWrongSound();
+        matchingMistakes++;
+        if (el1) el1.classList.add('card-shaking', 'bg-rose-50', 'border-rose-600');
+        if (el2) el2.classList.add('card-shaking', 'bg-rose-50', 'border-rose-600');
+
+        setTimeout(() => {
+          selectedFirstCard = null;
+          isMatchingProcessing = false;
+          renderMatchingView();
+        }, 650);
+      }
+    }
+
+    function renderMatchingWin() {
+      const app = document.getElementById('app');
+      const totalPairs = activeMatchingGame.matchingPairs.length;
+      const accuracy = Math.max(0, Math.round((totalPairs / (totalPairs + matchingMistakes)) * 100));
+
+      app.innerHTML = `
+        <div class="flex-1 flex flex-col items-center justify-center py-6 text-center">
+          <div class="bg-white border-2 border-slate-900 p-6 pixel-shadow w-full max-w-md">
+            <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-amber-300 to-amber-600 border-2 border-amber-700 pixel-shadow flex items-center justify-center gold-cup-animation">
+              <span class="text-3xl">🃏</span>
+            </div>
+            <h2 class="text-2xl font-black text-slate-900 mb-1">رائع! اكتملت لعبة المطابقة!</h2>
+            <p class="text-xs text-slate-500 mb-4">${activeMatchingGame.title}</p>
+
+            <div class="grid grid-cols-2 gap-3 my-3 bg-slate-50 border-2 border-slate-900 p-3 pixel-shadow text-center">
+              <div>
+                <span class="text-xs text-slate-500 font-bold">الأزواج المكتملة</span>
+                <div class="text-2xl font-black text-emerald-700">${totalPairs} / ${totalPairs}</div>
+              </div>
+              <div>
+                <span class="text-xs text-slate-500 font-bold">عدد الأخطاء</span>
+                <div class="text-2xl font-black text-rose-600">${matchingMistakes}</div>
+              </div>
+            </div>
+
+            <div class="space-y-2.5 mt-4">
+              <button onclick="shareMatchingWhatsApp()" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs md:text-sm pixel-bevel pixel-press flex items-center justify-center gap-2">
+                <span>مشاركة النتيجة في واتساب 📋</span>
+              </button>
+              <button onclick="startMatchingGame(activeMatchingGame)" class="w-full py-2.5 bg-slate-100 hover:bg-slate-200 border-2 border-slate-900 font-bold text-xs pixel-press">
+                إعادة اللعب وخلط البطاقات ↺
+              </button>
+              <button onclick="showHome()" class="w-full py-2 text-xs font-bold text-slate-600 hover:underline">
+                العودة للمدونات التفاعلية
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function shareMatchingWhatsApp() {
+      const totalPairs = activeMatchingGame.matchingPairs.length;
+      const text = `🃏 تحدي لعبة بطاقات الفلسفة - مدونات فخري: *${activeMatchingGame.title}*\n` +
+        `🎯 أنجزت مطابقة جميع الأزواج الـ (${totalPairs}) بنجاح!\n` +
+        `❌ الأخطاء: ${matchingMistakes}\n` +
+        `⚡ العب التحدي الآن على واتساب:\n${window.location.href}`;
+      window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
+    }
+
+    // ==========================================
+    // 📝 Standard Multiple Choice Quiz
+    // ==========================================
+    let activeQuiz = null;
+    let currentQIdx = 0;
+    let score = 0;
+    let selectedOpt = null;
+    let isAnswered = false;
+
+    function startQuiz(quiz) {
+      activeQuiz = quiz;
+      currentQIdx = 0;
+      score = 0;
+      selectedOpt = null;
+      isAnswered = false;
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+      const app = document.getElementById('app');
+      const q = activeQuiz.questions[currentQIdx];
+      const total = activeQuiz.questions.length;
+      const progressPercent = Math.round(((currentQIdx + (isAnswered ? 1 : 0)) / total) * 100);
+      const letters = ['أ', 'ب', 'ج', 'د'];
+
+      let optionsHtml = '';
+      q.options.forEach((opt, idx) => {
+        let style = 'bg-white border-2 border-slate-900 hover:bg-slate-50';
+        if (isAnswered) {
+          if (idx === q.correct) {
+            style = 'bg-emerald-100 border-2 border-emerald-600 font-bold text-emerald-950';
+          } else if (selectedOpt === idx && idx !== q.correct) {
+            style = 'bg-rose-100 border-2 border-rose-600 text-rose-950 line-through';
+          } else {
+            style = 'bg-slate-100 border-slate-300 opacity-50';
+          }
+        }
+
+        optionsHtml += `
+          <button onclick="pickOption(${idx})" ${isAnswered ? 'disabled' : ''} class="w-full text-right p-3.5 pixel-shadow pixel-press flex items-center justify-between text-sm md:text-base font-bold transition-all ${style}">
+            <div class="flex items-center gap-2.5">
+              <span class="w-6 h-6 flex items-center justify-center text-xs font-black border border-slate-900 bg-slate-200">${letters[idx] || (idx+1)}</span>
+              <span>${opt}</span>
+            </div>
+            ${isAnswered && idx === q.correct ? '<span>✓</span>' : ''}
+          </button>
+        `;
+      });
+
+      // Animated Feedback Section with Pure Golden Yellow Trophy & Perfectly Upright Breaking Heart
+      let feedbackHtml = '';
+      if (isAnswered) {
+        if (selectedOpt === q.correct) {
+          feedbackHtml = `
+            <div class="my-4 p-4 bg-amber-50 border-2 border-amber-500 pixel-shadow flex items-center gap-4">
+              <div class="w-16 h-16 bg-gradient-to-br from-amber-300 via-amber-400 to-amber-600 border-2 border-amber-700 pixel-shadow flex items-center justify-center shrink-0 gold-cup-animation">
+                <svg viewBox="0 0 64 64" class="w-12 h-12">
+                  <path d="M17 18C10 18 8 26 13 32C15 34 18 35 20 35" stroke="#D97706" stroke-width="3.2" fill="none"/>
+                  <path d="M47 18C54 18 56 26 51 32C49 34 46 35 44 35" stroke="#D97706" stroke-width="3.2" fill="none"/>
+                  <path d="M18 14H46V28C46 38 38 44 32 44C26 44 18 38 18 28V14Z" fill="#FBBF24" stroke="#B45309" stroke-width="2"/>
+                  <path d="M20 16H27V28C27 35 25 38 23 40" stroke="#FEF08A" stroke-width="2" stroke-linecap="round" fill="none"/>
+                  <rect x="16" y="11" width="32" height="5" rx="2" fill="#FDE047" stroke="#D97706"/>
+                  <polygon points="32,20 34,25 39,25 35,28 36.5,33 32,30 27.5,33 29,28 25,25 30,25" fill="#FFFBEB" stroke="#D97706"/>
+                  <path d="M28 44H36V50H28V44Z" fill="#F59E0B" stroke="#B45309"/>
+                  <ellipse cx="32" cy="54" rx="14" ry="4" fill="#D97706" stroke="#92400E"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-xl font-black text-amber-900">أحسنت! إجابة صحيحة ★</h4>
+                ${q.exp ? `<p class="text-xs text-amber-950 mt-1 font-semibold">💡 <strong>إضاءة فلسفية:</strong> ${q.exp}</p>` : ''}
+              </div>
+            </div>
+          `;
+        } else {
+          feedbackHtml = `
+            <div class="my-4 p-4 bg-rose-50 border-2 border-rose-600 pixel-shadow flex items-center gap-4">
+              <div class="w-16 h-16 bg-rose-900/15 border-2 border-rose-700 pixel-shadow flex items-center justify-center shrink-0 overflow-hidden relative">
+                <svg viewBox="0 0 64 64" class="w-14 h-14 overflow-visible">
+                  <!-- Upright Left Lobe Half -->
+                  <g class="heart-half-left">
+                    <path d="M 32 20 C 24 10, 10 10, 6 22 C 2 34, 16 46, 32 54 L 32 44 L 28 38 L 32 32 L 28 26 L 32 20 Z" fill="#E11D48" stroke="#9F1239" stroke-width="2" stroke-linejoin="round" />
+                    <path d="M 12 18 C 10 23, 11 29, 15 35" stroke="#FDA4AF" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.85" />
+                  </g>
+                  <!-- Upright Right Lobe Half -->
+                  <g class="heart-half-right">
+                    <path d="M 32 20 L 28 26 L 32 32 L 28 38 L 32 44 L 32 54 C 48 46, 62 34, 58 22 C 54 10, 40 10, 32 20 Z" fill="#E11D48" stroke="#9F1239" stroke-width="2" stroke-linejoin="round" />
+                  </g>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <h4 class="text-xl font-black text-rose-700">إجابة خاطئة! حظ أوفر</h4>
+                <div class="text-xs md:text-sm font-bold text-rose-950 mt-1">✅ <strong>الإجابة الصحيحة:</strong> ${q.options[q.correct]}</div>
+                ${q.exp ? `<p class="text-xs text-rose-800 mt-1 font-medium">💡 ${q.exp}</p>` : ''}
+              </div>
+            </div>
+          `;
+        }
+      }
+
+      app.innerHTML = `
+        <div class="flex flex-col flex-1 pb-16">
+          <div class="flex items-center justify-between py-2 border-b-2 border-slate-200 mb-3 text-xs font-black text-slate-600">
+            <span class="px-2 py-0.5 border" style="background-color: rgba(141, 91, 53, 0.12); color: #6e3c1b; border-color: rgba(141, 91, 53, 0.3);">السؤال ${currentQIdx + 1} من ${total}</span>
+            <span>النتيجة الحالية: <strong class="text-emerald-700">${score}</strong></span>
+          </div>
+
+          <div class="bg-white border-2 border-slate-900 p-5 pixel-shadow mb-4">
+            <span class="bg-slate-900 text-white font-black px-2 py-0.5 text-xs inline-block mb-2">السؤال ${currentQIdx + 1}</span>
+            <h2 class="text-base md:text-lg font-black text-slate-900 leading-relaxed">${q.q}</h2>
+          </div>
+
+          <div class="space-y-3 mb-2">
+            ${optionsHtml}
+          </div>
+
+          ${feedbackHtml}
+
+          ${isAnswered ? `
+            <button onclick="nextQuestion()" class="w-full mt-3 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-base pixel-bevel pixel-press">
+              ${currentQIdx + 1 < total ? 'الانتقال إلى السؤال التالي ➔' : 'عرض النتيجة النهائية 🏆'}
+            </button>
+          ` : ''}
+        </div>
+
+        <!-- Persistent Bottom Progress Bar -->
+        <div class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-slate-900 p-2 pixel-shadow z-20">
+          <div class="max-w-xl mx-auto flex items-center gap-3">
+            <span class="text-[11px] font-black text-slate-600">${progressPercent}%</span>
+            <div class="flex-1 h-3 bg-slate-200 border border-slate-900 overflow-hidden">
+              <div class="h-full bg-emerald-500 transition-all duration-300" style="width: ${progressPercent}%"></div>
+            </div>
+            <span class="text-[11px] font-bold text-slate-600">${currentQIdx + 1}/${total}</span>
+          </div>
+        </div>
+      `;
+    }
+
+    function pickOption(idx) {
+      if (isAnswered) return;
+      selectedOpt = idx;
+      isAnswered = true;
+      const q = activeQuiz.questions[currentQIdx];
+      if (idx === q.correct) {
+        score++;
+        playCorrectSound();
+      } else {
+        playWrongSound();
+      }
+      renderQuestion();
+    }
+
+    function nextQuestion() {
+      if (currentQIdx + 1 < activeQuiz.questions.length) {
+        currentQIdx++;
+        selectedOpt = null;
+        isAnswered = false;
+        renderQuestion();
+      } else {
+        renderResults();
+      }
+    }
+
+    function renderResults() {
+      const app = document.getElementById('app');
+      const total = activeQuiz.questions.length;
+      const percent = Math.round((score / total) * 100);
+
+      app.innerHTML = `
+        <div class="flex-1 flex flex-col items-center justify-center py-6 text-center">
+          <div class="bg-white border-2 border-slate-900 p-6 pixel-shadow w-full max-w-md">
+            <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-amber-300 to-amber-600 border-2 border-amber-700 pixel-shadow flex items-center justify-center gold-cup-animation">
+              <span class="text-3xl">🏆</span>
+            </div>
+            <h2 class="text-2xl font-black text-slate-900 mb-1">اكتملت المدونة التفاعلية بنجاح!</h2>
+            <p class="text-xs text-slate-500 mb-4">${activeQuiz.title}</p>
+            <div class="bg-slate-100 border-2 border-slate-900 p-4 my-3 pixel-shadow">
+              <div class="text-4xl font-black text-emerald-700 mb-1">${score} / ${total}</div>
+              <div class="text-sm font-bold text-slate-600">النسبة المئوية: <span class="font-black text-slate-900">${percent}%</span></div>
+            </div>
+            <div class="space-y-2.5 mt-4">
+              <button onclick="shareWhatsAppResult(${score}, ${total}, '${activeQuiz.title}')" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm pixel-bevel pixel-press flex items-center justify-center gap-2">
+                <span>مشاركة النتيجة في واتساب 📋</span>
+              </button>
+              <button onclick="startQuiz(activeQuiz)" class="w-full py-2.5 bg-slate-100 hover:bg-slate-200 border-2 border-slate-900 font-bold text-xs pixel-press">
+                إعادة خوض المدونة التفاعلية ↺
+              </button>
+              <button onclick="showHome()" class="w-full py-2 text-xs font-bold text-slate-600 hover:underline">
+                تصفح باقي مدونات فخري
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function shareWhatsAppResult(s, tot, title) {
+      const p = Math.round((s / tot) * 100);
+      const text = `🎯 مدونة فلسفية تفاعلية - مدونات فخري: *${title}*\n` +
+        `📊 نتيجتي: ${s} من ${tot} (${p}%)\n` +
+        `⚡ اختبر معلوماتك الآن:\n${window.location.href}`;
+      window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
+    }
+
+    // ==========================================
+    // ⚙️ Admin Authentication & Dashboard (100% Parity with React Web View)
+    // ==========================================
+    let isAdminAuth = false;
+    let adminAuthError = '';
+    const ADMIN_PASS = 'bac2025';
+
+    function showAdmin() {
+      const app = document.getElementById('app');
+      closeModal();
+
+      if (!isAdminAuth) {
+        // EXACT LOGIN GATE MATCHING REACT ADMIN VIEW
+        app.innerHTML = `
+          <div class="min-h-[75vh] flex items-center justify-center p-2">
+            <div class="bg-white border-2 border-slate-900 p-6 md:p-8 pixel-shadow max-w-md w-full">
+              <!-- Protected Lock Box in BAC Brown -->
+              <div class="w-14 h-14 bg-bac-brown text-white border-2 border-slate-900 pixel-shadow flex items-center justify-center mx-auto mb-4">
+                <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </div>
+
+              <h1 class="text-xl md:text-2xl font-black text-center mb-1 text-slate-900">
+                مدونات فخري — لوحة التحكم
+              </h1>
+              <p class="text-xs md:text-sm text-center text-slate-600 mb-6">
+                منطقة محمية خاصة بالأستاذ لإضافة وإدارة المدونات التفاعلية وتوليد الروابط للقناة.
+              </p>
+
+              <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+                <div>
+                  <label class="block text-xs font-bold mb-1.5 text-slate-900">
+                    رمز المرور (Password):
+                  </label>
+                  <input
+                    type="password"
+                    id="adminPassInput"
+                    placeholder="أدخل رمز المرور السري..."
+                    autofocus
+                    class="w-full px-3 py-2.5 bg-slate-50 border-2 border-slate-900 text-slate-900 text-sm font-bold focus:outline-none pixel-press"
+                  />
+                </div>
+
+                ${adminAuthError ? `
+                  <div class="p-2.5 bg-rose-50 border border-rose-500 text-rose-600 text-xs font-bold flex items-center gap-2">
+                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="12"></line>
+                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <span>${adminAuthError}</span>
+                  </div>
+                ` : ''}
+
+                <button
+                  type="submit"
+                  class="w-full py-3 bg-bac-brown text-white font-black text-sm pixel-bevel pixel-shadow pixel-press"
+                >
+                  دخول لوحة التحكم
+                </button>
+
+                <button
+                  type="button"
+                  onclick="adminAuthError='';showHome()"
+                  class="w-full py-2 text-xs text-slate-600 hover:text-slate-900 font-bold"
+                >
+                  العودة إلى الصفحة الرئيسية للتلاميذ
+                </button>
+              </form>
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      // ==========================================
+      // AUTHENTICATED ADMIN DASHBOARD (MATCHING REACT EXACTLY)
+      // ==========================================
+      currentQuizzes = getStorageQuizzes();
+
+      let cardsHtml = '';
+      currentQuizzes.forEach((q, idx) => {
+        const isMatch = q.blogType === 'matching_cards';
+        const isTrain = q.blogType === 'training';
+        const uniqueLink = `${window.location.origin}${window.location.pathname}?quiz=${q.id}`;
+        const itemsCountText = isMatch ? `${q.matchingPairs?.length || 0} أزواج` : isTrain ? `${q.questions?.length || 0} أوراق عمل` : `${q.questions?.length || 0} أسئلة`;
+
+        cardsHtml += `
+          <div class="bg-white border-2 border-slate-900 p-4 pixel-shadow flex flex-col justify-between">
+            <div>
+              <div class="flex items-start justify-between gap-2 mb-2">
+                <div class="flex items-center gap-1.5">
+                  <span class="px-2 py-0.5 text-[11px] font-bold border" style="background-color: rgba(141, 91, 53, 0.12); color: #6e3c1b; border-color: rgba(141, 91, 53, 0.3);">
+                    ${q.category || 'فلسفة'}
+                  </span>
+                  ${isMatch ? `
+                    <span class="px-2 py-0.5 bg-yellow-100 text-yellow-900 text-[10px] font-black border border-yellow-400">
+                      البطاقات
+                    </span>
+                  ` : isTrain ? `
+                    <span class="px-2 py-0.5 bg-sky-100 text-sky-900 text-[10px] font-black border border-sky-400">
+                      تدريبات
+                    </span>
+                  ` : `
+                    <span class="px-2 py-0.5 bg-orange-100 text-orange-900 text-[10px] font-black border border-orange-400">
+                      كويزات
+                    </span>
+                  `}
+                </div>
+                <span class="text-[11px] text-slate-500 font-bold">
+                  ${itemsCountText}
+                </span>
+              </div>
+
+              <h3 class="text-base font-extrabold mb-1.5 leading-snug text-slate-900">
+                ${q.title}
+              </h3>
+
+              ${q.description ? `
+                <p class="text-xs text-slate-600 line-clamp-2 mb-3">
+                  ${q.description}
+                </p>
+              ` : ''}
+
+              <!-- Play statistics -->
+              <div class="flex items-center gap-4 text-xs font-bold text-slate-600 bg-slate-50 p-2 border border-slate-200 mb-3">
+                <span class="flex items-center gap-1">
+                  <svg class="w-3.5 h-3.5 text-bac-brown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  ${q.timesPlayed || 12} محاولة
+                </span>
+                <span class="flex items-center gap-1">
+                  <svg class="w-3.5 h-3.5 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                  متوسط: ${q.averageScore || 85}%
+                </span>
+              </div>
+            </div>
+
+            <!-- Actions Bar -->
+            <div class="pt-3 border-t border-slate-200 flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-1.5">
+                <!-- Copy WhatsApp Link -->
+                <button
+                  type="button"
+                  onclick="copyToClipboard('${uniqueLink}', '${q.title}')"
+                  class="px-2.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold pixel-press flex items-center gap-1"
+                  title="نسخ رابط واتساب المخصص"
+                >
+                  <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                  <span>نسخ لواتساب</span>
+                </button>
+
+                <!-- Preview as Student -->
+                <button
+                  type="button"
+                  onclick="window.open('${uniqueLink}', '_blank')"
+                  class="p-1.5 border border-slate-300 bg-slate-100 hover:bg-slate-200 pixel-press text-slate-800"
+                  title="معاينة كتلميذ في نافذة جديدة"
+                >
+                  <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </button>
+              </div>
+
+              <div class="flex items-center gap-1.5">
+                <!-- Edit -->
+                <button
+                  type="button"
+                  onclick="openEditQuiz('${q.id}')"
+                  class="px-2 py-1.5 border border-slate-300 bg-slate-100 hover:bg-slate-200 pixel-press text-slate-800 flex items-center gap-1 text-xs font-bold"
+                  title="تعديل المدونة التفاعلية"
+                >
+                  <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                  <span>تعديل</span>
+                </button>
+
+                <!-- Delete -->
+                <button
+                  type="button"
+                  onclick="deleteQuiz(${idx})"
+                  class="p-1.5 border border-rose-300 bg-rose-50 hover:bg-rose-100 text-rose-600 pixel-press"
+                  title="حذف المدونة"
+                >
+                  <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      app.innerHTML = `
+        <div class="space-y-6">
+          <!-- Admin Header Bar inside page -->
+          <div class="bg-white border-2 border-slate-900 p-4 pixel-shadow flex items-center justify-between gap-3">
+            <div class="flex items-center gap-2.5">
+              <div class="bg-bac-brown font-black border-2 pixel-bevel pixel-shadow w-8 h-8 text-xs flex items-center justify-center shrink-0 tracking-wider">
+                BAC
+              </div>
+              <div>
+                <h1 class="text-base md:text-lg font-black leading-none flex items-center gap-1.5">
+                  <span class="text-slate-900">مدونات فخري</span>
+                  <span class="text-xs text-bac-brown font-bold">(لوحة التحكم)</span>
+                </h1>
+                <span class="text-[10px] text-slate-500 font-bold">
+                  المشرف / الأستاذ
+                </span>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <button
+                type="button"
+                onclick="showHome()"
+                class="px-2.5 py-1.5 text-xs font-bold border border-slate-300 bg-slate-100 hover:bg-slate-200 pixel-press flex items-center gap-1.5"
+              >
+                <svg class="w-3.5 h-3.5 text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                <span>معاينة عامة</span>
+              </button>
+
+              <button
+                type="button"
+                onclick="isAdminAuth=false;adminAuthError='';showHome()"
+                class="px-2.5 py-1.5 text-xs font-bold border border-rose-300 text-rose-600 bg-rose-50 hover:bg-rose-100 pixel-press flex items-center gap-1"
+              >
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                <span>خروج</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Top Summary & Action Bar -->
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h2 class="text-xl md:text-2xl font-black text-slate-900">
+                إدارة المدونات التفاعلية (${currentQuizzes.length})
+              </h2>
+              <p class="text-xs md:text-sm text-slate-600 mt-0.5">
+                كل كويز يتم توليد رابط مخصص له لمشاركته في قناتك على واتساب كلعبة منفصلة للتلاميذ.
+              </p>
+            </div>
+
+            <button
+              type="button"
+              onclick="openTypeSelectModal()"
+              class="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm pixel-bevel pixel-shadow pixel-press flex items-center justify-center gap-2 self-start sm:self-auto"
+            >
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              <span>+ إضافة مدونة تفاعلية جديدة</span>
+            </button>
+          </div>
+
+          <!-- Quizzes Grid (2 Columns on Desktop) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            ${cardsHtml}
+          </div>
+        </div>
+      `;
+    }
+
+    function handleAdminLogin(e) {
+      if (e) e.preventDefault();
+      const p = document.getElementById('adminPassInput').value;
+      if (p === ADMIN_PASS) {
+        isAdminAuth = true;
+        adminAuthError = '';
+        showAdmin();
+      } else {
+        adminAuthError = 'رمز المرور غير صحيح! حاول مرة أخرى.';
+        showAdmin();
+      }
+    }
+
+    function deleteQuiz(idx) {
+      if (confirm("هل أنت متأكد من حذف هذه المدونة التفاعلية؟")) {
+        currentQuizzes.splice(idx, 1);
+        saveStorageQuizzes(currentQuizzes);
+        showAdmin();
+      }
+    }
+
+    function copyToClipboard(link, title) {
+      const shareMessage = `🎯 كويز بكالوريا جديد: *${title || 'اختبار تفاعلي'}*\n` +
+        `⚡ افتح الكويز وتحدى معلوماتك الآن مباشرة على واتساب:\n${link}`;
+
+      navigator.clipboard.writeText(shareMessage).then(() => {
+        alert("تم نسخ الرابط والرسالة الجاهزة لواتساب بنجاح! 📋");
+      }).catch(() => {
+        prompt("انسخ الرابط التالي لمشاركته:", shareMessage);
+      });
+    }
+
+    // ==========================================
+    // 🪟 REAL DIALOG MODALS SYSTEM
+    // ==========================================
+    function openModal(contentHtml) {
+      const modal = document.getElementById('modalContainer');
+      modal.className = "fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4 overflow-y-auto";
+      modal.innerHTML = contentHtml;
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('modalContainer');
+      modal.className = "hidden";
+      modal.innerHTML = "";
+    }
+
+    // ==========================================
+    // 🪟 REAL DIALOG MODALS SYSTEM
+    // ==========================================
+    // Modal 1: Type Selection Dialog
+    function openTypeSelectModal() {
+      openModal(`
+        <div class="bg-white border-2 border-slate-900 p-6 pixel-shadow max-w-md w-full my-auto space-y-4">
+          <div class="text-right">
+            <h3 class="text-lg font-black text-slate-900">
+              اختر نوع المدونة التفاعلية الجديدة
+            </h3>
+            <p class="text-xs text-slate-600 mt-1">
+              اختر النمط المناسب للمحتوى الذي تود نشره لتلاميذك في قناة واتساب:
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 gap-3 my-3">
+            <!-- Option 1: Standard Q&A Quiz -->
+            <button
+              type="button"
+              onclick="openStandardQuizEditor(null)"
+              class="p-4 border-2 border-slate-900 bg-white hover:bg-slate-50 pixel-shadow pixel-press text-right flex items-start gap-3 transition-colors"
+            >
+              <div class="w-10 h-10 bg-amber-100 border border-amber-600/40 text-amber-900 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+              </div>
+              <div class="flex-1">
+                <h4 class="text-sm font-black text-slate-900 mb-1">
+                  1. مدونة تفاعلية عادية (أسئلة واختيارات)
+                </h4>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  أسئلة فلسفية بنظام الخيارات المتعددة (أ، ب، ج، د) مع كؤوس النجاح أو انشطار القلب عند الخطأ وإضاءات فلسفية مفيدة.
+                </p>
+              </div>
+            </button>
+
+            <!-- Option 2: Matching Cards Game -->
+            <button
+              type="button"
+              onclick="openMatchingCardsEditor(null)"
+              class="p-4 border-2 border-emerald-600 bg-emerald-50/70 hover:bg-emerald-100 pixel-shadow pixel-press text-right flex items-start gap-3 transition-colors"
+            >
+              <div class="w-10 h-10 bg-emerald-600 text-white flex items-center justify-center font-black text-lg shrink-0">
+                🃏
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center gap-2 mb-1">
+                  <h4 class="text-sm font-black text-emerald-900">
+                    2. لعبة مطابقة بطاقات اللعب (جديد)
+                  </h4>
+                  <span class="text-[10px] bg-emerald-600 text-white px-1.5 py-0.2 font-bold">
+                    ممتعة جداً
+                  </span>
+                </div>
+                <p class="text-xs text-emerald-800 leading-relaxed">
+                  بطاقات كوتشينة برموز القلب والمعين، يقوم التلميذ بمطابقة الفيلسوف ومقولته أو المفهوم وتعريفه؛ تتلون بالأخضر عند النجاح أو ترتعش عند الخطأ!
+                </p>
+              </div>
+            </button>
+
+            <!-- Option 3: Training Worksheets (تدريبات باللون الأزرق الفاتح) -->
+            <button
+              type="button"
+              onclick="openTrainingEditor(null)"
+              class="p-4 border-2 border-sky-500 bg-sky-50/70 hover:bg-sky-100/80 pixel-shadow pixel-press text-right flex items-start gap-3 transition-colors"
+            >
+              <div class="w-10 h-10 bg-sky-500 text-white flex items-center justify-center font-black text-lg shrink-0">
+                ✍️
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center gap-2 mb-1">
+                  <h4 class="text-sm font-black text-sky-950">
+                    3. تدريبات تفاعلية (ورقة عمل وتدريب متدرج)
+                  </h4>
+                  <span class="text-[10px] bg-sky-600 text-white px-1.5 py-0.2 font-bold">
+                    أزرق فاتح
+                  </span>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  صفحات ورقية متتالية، جملة عريضة يكتبها الأستاذ وقلم أسود، حل هادئ لا ينبه على الخطأ أثناء العمل، ثم سحب الإصلاح الشامل والتقييم في النهاية.
+                </p>
+              </div>
+            </button>
+          </div>
+
+          <div class="pt-2 border-t text-left">
+            <button type="button" onclick="closeModal()" class="px-4 py-2 text-xs font-bold text-slate-600 hover:text-slate-900 border border-slate-300">
+              إلغاء
+            </button>
+          </div>
+        </div>
+      `);
+    }
+
+    // Modal 2: Multi-Question Standard Quiz Editor Dialog
+    let quizEditorState = {
+      editingId: null,
+      title: '',
+      category: '',
+      targetGrade: 'بكالوريا 2025',
+      description: '',
+      questions: []
+    };
+
+    function openStandardQuizEditor(quizId) {
+      if (quizId) {
+        const item = currentQuizzes.find(x => x.id === quizId);
+        if (item) {
+          quizEditorState = {
+            editingId: item.id,
+            title: item.title || '',
+            category: item.category || 'فلسفة',
+            targetGrade: item.targetGrade || 'بكالوريا 2025',
+            description: item.description || '',
+            questions: (item.questions && item.questions.length > 0)
+              ? item.questions.map(q => ({
+                  q: q.q || q.question || '',
+                  options: q.options && q.options.length >= 2 ? [...q.options] : ['', ''],
+                  correct: typeof q.correct === 'number' ? q.correct : (q.correctIndex || 0),
+                  exp: q.exp || q.explanation || ''
+                }))
+              : [{ q: '', options: ['', '', '', ''], correct: 0, exp: '' }]
+          };
+        }
+      } else {
+        quizEditorState = {
+          editingId: null,
+          title: '',
+          category: 'فلسفة',
+          targetGrade: 'بكالوريا 2025',
+          description: '',
+          questions: [
+            { q: '', options: ['', '', '', ''], correct: 0, exp: '' }
+          ]
+        };
+      }
+
+      renderQuizEditorModal();
+    }
+
+    function renderQuizEditorModal() {
+      let questionsHtml = '';
+      quizEditorState.questions.forEach((q, qIdx) => {
+        let optionsHtml = '';
+        q.options.forEach((opt, optIdx) => {
+          const isCorrect = q.correct === optIdx;
+          optionsHtml += `
+            <div class="flex items-center gap-2 p-1.5 border ${isCorrect ? 'border-emerald-500 bg-emerald-50' : 'border-slate-300 bg-white'}">
+              <input
+                type="radio"
+                name="correctOpt_${qIdx}"
+                value="${optIdx}"
+                ${isCorrect ? 'checked' : ''}
+                onchange="quizEditorState.questions[${qIdx}].correct = ${optIdx}; renderQuizEditorModal();"
+                class="w-4 h-4 cursor-pointer"
+                title="تحديد كإجابة صحيحة"
+              />
+              <span class="text-xs font-black w-5 text-center text-slate-500">
+                ${['أ', 'ب', 'ج', 'د', 'هـ', 'و', 'ز'][optIdx] || (optIdx + 1)}
+              </span>
+              <input
+                type="text"
+                value="${(opt || '').replace(/"/g, '&quot;')}"
+                oninput="quizEditorState.questions[${qIdx}].options[${optIdx}] = this.value"
+                placeholder="الخيار ${optIdx + 1}..."
+                class="flex-1 px-2 py-1 text-xs border border-slate-200 bg-slate-50 font-bold"
+              />
+              ${isCorrect ? `
+                <span class="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-1.5 py-0.5 shrink-0">
+                  صحيح ✓
+                </span>
+              ` : ''}
+              ${q.options.length > 2 ? `
+                <button
+                  type="button"
+                  onclick="removeQuizOptionFromEditor(${qIdx}, ${optIdx})"
+                  class="p-1 text-slate-400 hover:text-rose-600 transition-colors font-black"
+                  title="حذف هذا الخيار"
+                >
+                  ✕
+                </button>
+              ` : ''}
+            </div>
+          `;
+        });
+
+        questionsHtml += `
+          <div class="border-2 border-slate-900 p-3.5 bg-slate-50 pixel-shadow space-y-3 mb-3">
+            <div class="flex items-center justify-between">
+              <span class="bg-bac-brown font-black px-2.5 py-0.5 text-xs pixel-bevel">
+                السؤال ${qIdx + 1}
+              </span>
+              ${quizEditorState.questions.length > 1 ? `
+                <button
+                  type="button"
+                  onclick="removeQuizQuestionFromEditor(${qIdx})"
+                  class="text-xs text-rose-600 hover:text-rose-700 font-bold flex items-center gap-1"
+                  title="حذف هذا السؤال"
+                >
+                  حذف السؤال ✕
+                </button>
+              ` : ''}
+            </div>
+
+            <!-- Question Text -->
+            <div>
+              <label class="block text-xs font-bold mb-1 text-slate-900">
+                نص السؤال ${qIdx + 1}:
+              </label>
+              <textarea
+                rows="2"
+                oninput="quizEditorState.questions[${qIdx}].q = this.value"
+                placeholder="اكتب نص السؤال هنا..."
+                class="w-full px-3 py-2 bg-white border border-slate-900 text-xs md:text-sm font-medium rounded-none"
+              >${q.q}</textarea>
+            </div>
+
+            <!-- Options -->
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <label class="block text-xs font-bold text-slate-900">
+                  الخيارات (حدد الدائرة للإجابة الصحيحة):
+                </label>
+                <button
+                  type="button"
+                  onclick="addQuizOptionToEditor(${qIdx})"
+                  class="text-[11px] font-bold text-emerald-700 hover:underline flex items-center gap-1"
+                >
+                  <span>+ إضافة خيار إضافي</span>
+                </button>
+              </div>
+              <div class="space-y-1.5">
+                ${optionsHtml}
+              </div>
+            </div>
+
+            <!-- Explanation -->
+            <div>
+              <label class="block text-[11px] font-bold text-slate-600 mb-1">
+                توضيح أو معلومة إضافية للبكالوريا (تظهر بعد الإجابة):
+              </label>
+              <input
+                type="text"
+                value="${(q.exp || '').replace(/"/g, '&quot;')}"
+                oninput="quizEditorState.questions[${qIdx}].exp = this.value"
+                placeholder="مثال: يرجع ذلك لمؤتمر يالطا سنة 1945..."
+                class="w-full px-2.5 py-1.5 bg-white border border-slate-300 text-xs rounded-none"
+              />
+            </div>
+          </div>
+        `;
+      });
+
+      openModal(`
+        <div class="bg-white border-2 border-slate-900 p-5 pixel-shadow max-w-[calc(100%-2rem)] md:max-w-3xl max-h-[90dvh] overflow-y-auto w-full my-auto space-y-4">
+          <div class="text-right border-b pb-2">
+            <h3 class="text-lg md:text-xl font-black text-slate-900">
+              ${quizEditorState.editingId ? 'تعديل الكويز' : 'إنشاء مجموعة كويز جديدة للبكالوريا'}
+            </h3>
+            <p class="text-xs text-slate-600">
+              أدخل عنوان الكويز والأسئلة والخيارات، وحدد الإجابة الصحيحة لكل سؤال.
+            </p>
+          </div>
+
+          <!-- General Info -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 bg-slate-50 p-3 border border-slate-300">
+            <div class="sm:col-span-2">
+              <label class="block text-xs font-bold mb-1 text-slate-900">
+                عنوان الكويز * (مثال: تحدي الفلسفة للبكالوريا)
+              </label>
+              <input
+                type="text"
+                value="${quizEditorState.title.replace(/"/g, '&quot;')}"
+                oninput="quizEditorState.title = this.value"
+                placeholder="اكتب عنواناً جذاباً للكويز..."
+                class="w-full px-3 py-2 bg-white border border-slate-900 text-xs md:text-sm font-bold"
+              />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold mb-1 text-slate-900">
+                المادة / التصنيف
+              </label>
+              <input
+                type="text"
+                value="${quizEditorState.category.replace(/"/g, '&quot;')}"
+                oninput="quizEditorState.category = this.value"
+                placeholder="فلسفة، تاريخ، علوم، لغة عربية..."
+                class="w-full px-3 py-2 bg-white border border-slate-300 text-xs"
+              />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold mb-1 text-slate-900">
+                الشعبة / الجمهور المستهدف
+              </label>
+              <input
+                type="text"
+                value="${quizEditorState.targetGrade.replace(/"/g, '&quot;')}"
+                oninput="quizEditorState.targetGrade = this.value"
+                placeholder="مثال: شعبة علوم تجريبية / بكالوريا 2025"
+                class="w-full px-3 py-2 bg-white border border-slate-300 text-xs"
+              />
+            </div>
+
+            <div class="sm:col-span-2">
+              <label class="block text-xs font-bold mb-1 text-slate-900">
+                وصف مختصر أو نصيحة (اختياري)
+              </label>
+              <input
+                type="text"
+                value="${quizEditorState.description.replace(/"/g, '&quot;')}"
+                oninput="quizEditorState.description = this.value"
+                placeholder="تعليمات أو نبذة عن محتوى الأسئلة..."
+                class="w-full px-3 py-2 bg-white border border-slate-300 text-xs"
+              />
+            </div>
+          </div>
+
+          <!-- Questions List -->
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="text-sm font-black text-slate-900">
+                الأسئلة (${quizEditorState.questions.length})
+              </h4>
+              <button
+                type="button"
+                onclick="addQuizQuestionToEditor()"
+                class="px-2.5 py-1 text-xs font-bold bg-bac-brown text-white pixel-bevel pixel-press flex items-center gap-1"
+              >
+                <span>+ إضافة سؤال جديد</span>
+              </button>
+            </div>
+            ${questionsHtml}
+          </div>
+
+          <!-- Footer Actions -->
+          <div class="pt-3 border-t flex flex-row-reverse gap-2 sm:justify-start">
+            <button
+              type="button"
+              onclick="saveQuizEditorModal()"
+              class="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm pixel-bevel pixel-shadow pixel-press"
+            >
+              ${quizEditorState.editingId ? 'حفظ التعديلات ✓' : 'إنشاء الكويز وتوليد الرابط'}
+            </button>
+            <button
+              type="button"
+              onclick="closeModal()"
+              class="px-3 py-2 border border-slate-300 text-xs font-bold"
+            >
+              إلغاء
+            </button>
+          </div>
+        </div>
+      `);
+    }
+
+    function addQuizQuestionToEditor() {
+      quizEditorState.questions.push({
+        q: '',
+        options: ['', '', '', ''],
+        correct: 0,
+        exp: ''
+      });
+      renderQuizEditorModal();
+    }
+
+    function removeQuizQuestionFromEditor(qIdx) {
+      if (quizEditorState.questions.length <= 1) {
+        alert("يجب توفر سؤال واحد على الأقل!");
+        return;
+      }
+      quizEditorState.questions.splice(qIdx, 1);
+      renderQuizEditorModal();
+    }
+
+    function addQuizOptionToEditor(qIdx) {
+      const q = quizEditorState.questions[qIdx];
+      if (q.options.length >= 6) {
+        alert("الحد الأقصى للخيارات هو 6 خيارات.");
+        return;
+      }
+      q.options.push('');
+      renderQuizEditorModal();
+    }
+
+    function removeQuizOptionFromEditor(qIdx, optIdx) {
+      const q = quizEditorState.questions[qIdx];
+      if (q.options.length <= 2) {
+        alert("يجب توفر خيارين على الأقل في السؤال!");
+        return;
+      }
+      q.options.splice(optIdx, 1);
+      if (q.correct >= q.options.length) {
+        q.correct = q.options.length - 1;
+      }
+      renderQuizEditorModal();
+    }
+
+    function saveQuizEditorModal() {
+      const title = (quizEditorState.title || '').trim();
+      const cat = (quizEditorState.category || 'فلسفة').trim();
+
+      if (!title) {
+        alert("الرجاء إدخال عنوان الكويز!");
+        return;
+      }
+
+      for (let i = 0; i < quizEditorState.questions.length; i++) {
+        const q = quizEditorState.questions[i];
+        if (!q.q.trim()) {
+          alert(`السؤال ${i + 1} لا يحتوي على نص السؤال!`);
+          return;
+        }
+        const filled = q.options.filter(o => o.trim().length > 0);
+        if (filled.length < 2) {
+          alert(`السؤال ${i + 1} يجب أن يحتوي على خيارين على الأقل!`);
+          return;
+        }
+      }
+
+      const validQuestions = quizEditorState.questions.map((q, idx) => ({
+        id: `q_${idx + 1}_${Date.now()}`,
+        q: q.q.trim(),
+        options: q.options.map(o => o.trim()).filter(Boolean),
+        correct: Math.min(q.correct, q.options.filter(Boolean).length - 1),
+        exp: (q.exp || '').trim() || 'إضاءة فلسفية خاصة بالبكالوريا.'
+      }));
+
+      let savedSlug = quizEditorState.editingId || `quiz_${Date.now()}`;
+
+      if (quizEditorState.editingId) {
+        const item = currentQuizzes.find(x => x.id === quizEditorState.editingId);
+        if (item) {
+          item.title = title;
+          item.category = cat;
+          item.targetGrade = quizEditorState.targetGrade;
+          item.description = quizEditorState.description;
+          item.questions = validQuestions;
+        }
+      } else {
+        const newQuiz = {
+          id: savedSlug,
+          title,
+          category: cat,
+          targetGrade: quizEditorState.targetGrade,
+          description: quizEditorState.description || 'مدونة تفاعلية للبكالوريا عبر واتساب.',
+          blogType: 'standard',
+          questions: validQuestions,
+          timesPlayed: 0,
+          averageScore: 0
+        };
+        currentQuizzes.unshift(newQuiz);
+      }
+
+      saveStorageQuizzes(currentQuizzes);
+      closeModal();
+      showAdmin();
+
+      // Show Created Share Modal
+      const uniqueLink = `${window.location.origin}${window.location.pathname}?quiz=${savedSlug}`;
+      openShareModal({ title }, uniqueLink);
+    }
+
+    // Modal 3: Matching Cards Game Editor Dialog
+    let matchEditorState = {
+      editingId: null,
+      title: '',
+      category: '',
+      description: '',
+      pairs: []
+    };
+
+    function openMatchingCardsEditor(gameId) {
+      if (gameId) {
+        const item = currentQuizzes.find(x => x.id === gameId);
+        if (item) {
+          matchEditorState = {
+            editingId: item.id,
+            title: item.title || '',
+            category: item.category || 'فلسفة',
+            description: item.description || '',
+            pairs: (item.matchingPairs && item.matchingPairs.length > 0)
+              ? item.matchingPairs.map(p => ({ itemA: p.itemA || '', itemB: p.itemB || '', suit: p.suit || '♥' }))
+              : [
+                  { itemA: '', itemB: '', suit: '♥' },
+                  { itemA: '', itemB: '', suit: '♦' }
+                ]
+          };
+        }
+      } else {
+        matchEditorState = {
+          editingId: null,
+          title: '',
+          category: 'فلسفة',
+          description: 'اضغط على كل فيلسوف وطابقه مع أطروحته الفلسفية الشهيرة',
+          pairs: [
+            { itemA: '', itemB: '', suit: '♥' },
+            { itemA: '', itemB: '', suit: '♦' },
+            { itemA: '', itemB: '', suit: '♣' },
+            { itemA: '', itemB: '', suit: '♠' }
+          ]
+        };
+      }
+
+      renderMatchingEditorModal();
+    }
+
+    function renderMatchingEditorModal() {
+      let pairsHtml = '';
+      matchEditorState.pairs.forEach((pair, idx) => {
+        const isRed = (pair.suit === '♥' || pair.suit === '♦');
+        pairsHtml += `
+          <div class="p-3 border-2 border-slate-900 bg-white pixel-shadow flex flex-col sm:flex-row items-center gap-3">
+            <div class="flex items-center gap-1 ${isRed ? 'text-rose-600' : 'text-slate-900'} font-black text-sm shrink-0">
+              <span class="text-base">${pair.suit || '♥'}</span>
+              <span class="text-xs text-slate-500 font-bold">#${idx + 1}</span>
+            </div>
+
+            <div class="flex-1 w-full grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <div>
+                <label class="block text-xs font-black text-slate-900 mb-1">
+                  البطاقة ${idx + 1}
+                </label>
+                <input
+                  type="text"
+                  value="${pair.itemA.replace(/"/g, '&quot;')}"
+                  oninput="matchEditorState.pairs[${idx}].itemA = this.value"
+                  placeholder="البطاقة ${idx + 1} (مثال: ديكارت)"
+                  class="w-full px-2.5 py-1.5 bg-slate-50 border border-slate-900 text-xs font-bold"
+                />
+              </div>
+
+              <div>
+                <label class="block text-xs font-black text-slate-900 mb-1">
+                  الزوج ${idx + 1}
+                </label>
+                <input
+                  type="text"
+                  value="${pair.itemB.replace(/"/g, '&quot;')}"
+                  oninput="matchEditorState.pairs[${idx}].itemB = this.value"
+                  placeholder="الزوج ${idx + 1} (مثال: الكوجيتو)"
+                  class="w-full px-2.5 py-1.5 bg-slate-50 border border-slate-900 text-xs font-bold"
+                />
+              </div>
+            </div>
+
+            ${matchEditorState.pairs.length > 2 ? `
+              <button
+                type="button"
+                onclick="removeMatchingPairFromEditor(${idx})"
+                class="p-1.5 text-slate-400 hover:text-rose-600 transition-colors shrink-0"
+                title="حذف هذا الزوج"
+              >
+                ✕
+              </button>
+            ` : ''}
+          </div>
+        `;
+      });
+
+      openModal(`
+        <div class="bg-white border-2 border-slate-900 p-5 pixel-shadow max-w-[calc(100%-2rem)] md:max-w-2xl max-h-[90vh] overflow-y-auto w-full my-auto space-y-4">
+          <div class="text-right border-b pb-2 flex items-center justify-between">
+            <div>
+              <h3 class="text-lg font-black text-slate-900 flex items-center gap-1.5">
+                <span>🃏</span>
+                <span>${matchEditorState.editingId ? 'تعديل لعبة مطابقة بطاقات الفلسفة' : 'إنشاء لعبة مطابقة بطاقات الفلسفة'}</span>
+              </h3>
+              <p class="text-xs text-slate-600 mt-0.5">
+                أدخل أزواج البطاقات (مثال: الفيلسوف في البطاقة الأولى، وأطروحته في البطاقة الثانية).
+              </p>
+            </div>
+            <button onclick="closeModal()" class="text-slate-400 hover:text-slate-900 font-black text-sm">✕</button>
+          </div>
+
+          <div class="space-y-3">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs font-bold mb-1 text-slate-900">عنوان اللعبة / التحدي:</label>
+                <input
+                  type="text"
+                  value="${matchEditorState.title.replace(/"/g, '&quot;')}"
+                  oninput="matchEditorState.title = this.value"
+                  placeholder="مثال: مطابقة فلاسفة الإنية والغيرية"
+                  class="w-full px-3 py-2 bg-slate-50 border border-slate-900 text-xs md:text-sm font-bold"
+                />
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold mb-1 text-slate-900">المحور / الدرس:</label>
+                <input
+                  type="text"
+                  value="${matchEditorState.category.replace(/"/g, '&quot;')}"
+                  oninput="matchEditorState.category = this.value"
+                  placeholder="مثال: الإنية والغيرية"
+                  class="w-full px-3 py-2 bg-slate-50 border border-slate-900 text-xs font-bold"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold mb-1 text-slate-900">توجيه / سؤال أعلى اللعبة:</label>
+              <input
+                type="text"
+                value="${matchEditorState.description.replace(/"/g, '&quot;')}"
+                oninput="matchEditorState.description = this.value"
+                placeholder="مثال: اضغط على كل فيلسوف وطابقه مع أطروحته الفلسفية الشهيرة"
+                class="w-full px-3 py-2 bg-slate-50 border border-slate-900 text-xs font-bold"
+              />
+            </div>
+
+            <!-- Pairs Manager -->
+            <div class="pt-2 border-t border-slate-200">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-black text-slate-900">
+                  أزواج البطاقات المتطابقة (${matchEditorState.pairs.length} أزواج):
+                </span>
+                <button
+                  type="button"
+                  onclick="addMatchingPairToEditor()"
+                  class="px-2.5 py-1 text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white pixel-bevel pixel-press flex items-center gap-1"
+                >
+                  <span>+ إضافة زوج بطاقات جديد</span>
+                </button>
+              </div>
+
+              <div class="space-y-2.5">
+                ${pairsHtml}
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-row-reverse gap-2 sm:justify-start pt-3 border-t">
+            <button
+              type="button"
+              onclick="saveMatchingEditorModal()"
+              class="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm pixel-bevel pixel-shadow pixel-press"
+            >
+              ${matchEditorState.editingId ? 'حفظ التعديلات ✓' : 'حفظ لعبة البطاقات وتوليد الرابط'}
+            </button>
+            <button
+              type="button"
+              onclick="closeModal()"
+              class="px-3 py-2 border border-slate-300 text-xs font-bold"
+            >
+              إلغاء
+            </button>
+          </div>
+        </div>
+      `);
+    }
+
+    function addMatchingPairToEditor() {
+      const suits = ['♥', '♦', '♣', '♠'];
+      const nextSuit = suits[matchEditorState.pairs.length % suits.length];
+      matchEditorState.pairs.push({ itemA: '', itemB: '', suit: nextSuit });
+      renderMatchingEditorModal();
+    }
+
+    function removeMatchingPairFromEditor(idx) {
+      if (matchEditorState.pairs.length <= 2) {
+        alert("يجب توفر زوجين على الأقل للعبة المطابقة!");
+        return;
+      }
+      matchEditorState.pairs.splice(idx, 1);
+      renderMatchingEditorModal();
+    }
+
+    function saveMatchingEditorModal() {
+      const title = (matchEditorState.title || '').trim();
+      const cat = (matchEditorState.category || 'فلسفة').trim();
+      const desc = (matchEditorState.description || 'اربط كل فيلسوف بأطروحته!').trim();
+
+      const suits = ['♥', '♦', '♣', '♠'];
+      const validPairs = [];
+      matchEditorState.pairs.forEach((p, i) => {
+        const a = (p.itemA || '').trim();
+        const b = (p.itemB || '').trim();
+        if (a && b) {
+          validPairs.push({
+            id: `p_${i + 1}_${Date.now()}`,
+            itemA: a,
+            itemB: b,
+            suit: suits[i % suits.length]
+          });
+        }
+      });
+
+      if (!title || validPairs.length < 2) {
+        alert("يرجى كتابة عنوان اللعبة وملء زوجين كاملين من البطاقات على الأقل!");
+        return;
+      }
+
+      let savedSlug = matchEditorState.editingId || `match_${Date.now()}`;
+
+      if (matchEditorState.editingId) {
+        const item = currentQuizzes.find(x => x.id === matchEditorState.editingId);
+        if (item) {
+          item.title = title;
+          item.category = cat;
+          item.description = desc;
+          item.matchingPairs = validPairs;
+        }
+      } else {
+        const newGame = {
+          id: savedSlug,
+          title,
+          category: cat,
+          description: desc,
+          blogType: 'matching_cards',
+          matchingPairs: validPairs,
+          questions: [],
+          timesPlayed: 0,
+          averageScore: 0
+        };
+        currentQuizzes.unshift(newGame);
+      }
+
+      saveStorageQuizzes(currentQuizzes);
+      closeModal();
+      showAdmin();
+
+      const uniqueLink = `${window.location.origin}${window.location.pathname}?quiz=${savedSlug}`;
+      openShareModal({ title }, uniqueLink);
+    }
+
+    // Modal 4: Share / Created Success Modal Dialog
+    function openShareModal(quiz, link) {
+      openModal(`
+        <div class="bg-white border-2 border-emerald-500 pixel-shadow max-w-md w-full my-auto p-5 space-y-3 text-right">
+          <div class="w-12 h-12 bg-emerald-500 text-white border-2 border-emerald-700 pixel-shadow flex items-center justify-center mb-2">
+            <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <h3 class="text-lg font-black text-emerald-700">
+            تم توليد الرابط المخصص بنجاح!
+          </h3>
+          <p class="text-xs text-slate-600">
+            هذا الرابط خاص بمجموعة "${quiz.title}" فقط، ويعرض للتلميذ كلعبة تفاعلية منفصلة دون إمكانية الوصول للإدارة.
+          </p>
+
+          <div class="bg-slate-100 p-2.5 border border-slate-300 break-all font-mono text-xs text-slate-900 select-all">
+            ${link}
+          </div>
+
+          <div class="space-y-2 pt-2">
+            <button
+              type="button"
+              onclick="copyToClipboard('${link}', '${quiz.title}')"
+              class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm pixel-bevel pixel-shadow pixel-press flex items-center justify-center gap-2"
+            >
+              <span>نسخ الرسالة والرابط لقناة واتساب 📋</span>
+            </button>
+
+            <button
+              type="button"
+              onclick="window.open('${link}', '_blank')"
+              class="w-full py-2 bg-slate-50 hover:bg-slate-100 border border-slate-300 font-bold text-xs pixel-press flex items-center justify-center gap-1.5"
+            >
+              <span>تجربة الكويز كتلميذ الآن</span>
+            </button>
+
+            <button
+              type="button"
+              onclick="closeModal()"
+              class="w-full py-1 text-xs text-slate-500 hover:text-slate-800 font-bold"
+            >
+              إغلاق
+            </button>
+          </div>
+        </div>
+      `);
+    }
+
+    function openEditQuiz(id) {
+      const item = currentQuizzes.find(x => x.id === id);
+      if (!item) return;
+      if (item.blogType === 'matching_cards') {
+        openMatchingCardsEditor(id);
+      } else if (item.blogType === 'training') {
+        openTrainingEditor(id);
+      } else {
+        openStandardQuizEditor(id);
+      }
+    }
+
+    
+    // ==========================================
+    // ✍️ TRAINING WORKSHEETS ENGINE (تدريبات باللون الأزرق الفاتح)
+    // ==========================================
+    let activeTraining = null;
+    let trainingSheetIndex = 0;
+    let trainingAnswers = {};
+    let trainingCurrentChoice = null;
+
+    function showTrainingIntro(quiz) {
+      activeTraining = quiz;
+      trainingSheetIndex = 0;
+      trainingAnswers = {};
+      trainingCurrentChoice = null;
+
+      const app = document.getElementById('app');
+      const headline = quiz.introHeadline || quiz.title;
+
+      app.innerHTML = `
+        <div class="max-w-2xl mx-auto py-4 px-2 space-y-4">
+          <!-- Top bar with Back and Category -->
+          <div class="flex items-center justify-between">
+            <button
+              type="button"
+              onclick="showHome()"
+              class="px-3 py-1.5 bg-white border-2 border-slate-900 text-slate-800 text-xs font-bold pixel-shadow pixel-press flex items-center gap-1.5"
+            >
+              <span>← خروج للقائمة</span>
+            </button>
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 bg-sky-100 text-sky-900 border border-sky-400 text-xs font-black">
+                تدريب تطبيقي
+              </span>
+              <span class="text-xs font-bold text-slate-600">
+                ${quiz.category || 'فلسفة'}
+              </span>
+            </div>
+          </div>
+
+          <!-- Realistic Paper Sheet Container -->
+          <div class="relative bg-[#fffdfa] border-2 border-slate-900 p-6 md:p-10 pixel-shadow" style="box-shadow: 4px 6px 0px rgba(0,0,0,0.85);">
+            <!-- Paper Holes Decoration -->
+            <div class="flex justify-around absolute -top-2.5 left-0 right-0 px-6">
+              <span class="w-4 h-4 rounded-full bg-slate-800 border-2 border-white inline-block"></span>
+              <span class="w-4 h-4 rounded-full bg-slate-800 border-2 border-white inline-block"></span>
+              <span class="w-4 h-4 rounded-full bg-slate-800 border-2 border-white inline-block"></span>
+              <span class="w-4 h-4 rounded-full bg-slate-800 border-2 border-white inline-block"></span>
+            </div>
+
+            <!-- Authentic Black Pen Icon -->
+            <div class="flex items-center justify-center mb-6 pt-3">
+              <div class="w-16 h-16 bg-slate-900 text-white rounded-full flex items-center justify-center pixel-shadow border-2 border-slate-950 transform -rotate-12 hover:rotate-0 transition-transform">
+                <svg class="w-9 h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                  <path d="M2 2l7.586 7.586"></path>
+                  <circle cx="11" cy="11" r="2"></circle>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Custom Teacher's Bold Headline -->
+            <div class="text-center space-y-3 mb-8">
+              <span class="inline-block px-3 py-1 bg-sky-50 text-sky-800 text-xs font-black border border-sky-300">
+                ورقة عمل وتدريب متدرج
+              </span>
+              <h2 class="text-xl md:text-2xl font-black text-slate-955 leading-relaxed max-w-xl mx-auto px-2">
+                ${headline}
+              </h2>
+              ${quiz.description ? `
+                <p class="text-xs md:text-sm text-slate-600 font-medium max-w-md mx-auto">
+                  ${quiz.description}
+                </p>
+              ` : ''}
+            </div>
+
+            <!-- Notice about quiet evaluation -->
+            <div class="bg-sky-50 border-2 border-sky-300 p-3 mb-8 text-center text-xs text-sky-950 font-bold max-w-md mx-auto">
+              💡 حل بهدوء: لن يتم تنبيهك بأي خطأ أثناء الإنجاز، بل ستسجل اختياراتك تلقائياً لترى الإصلاح الكامل والتقييم في النهاية.
+            </div>
+
+            <!-- Action Button: "نعم هيا نبدأ" -->
+            <div class="text-center pt-2">
+              <button
+                type="button"
+                onclick="startTrainingSheet(0)"
+                class="w-full sm:w-auto px-10 py-3.5 bg-sky-600 hover:bg-sky-700 text-white font-black text-base pixel-bevel pixel-shadow pixel-press inline-flex items-center justify-center gap-2"
+              >
+                <span>نعم هيا نبدأ</span>
+                <span>✍️</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function startTrainingSheet(idx) {
+      if (!activeTraining || !activeTraining.questions || idx >= activeTraining.questions.length) {
+        showTrainingFinished();
+        return;
+      }
+
+      trainingSheetIndex = idx;
+      trainingCurrentChoice = trainingAnswers[idx] !== undefined ? trainingAnswers[idx] : null;
+
+      renderCurrentSheet();
+    }
+
+    function renderCurrentSheet() {
+      const q = activeTraining.questions[trainingSheetIndex];
+      const total = activeTraining.questions.length;
+      const progressPercent = Math.round(((trainingSheetIndex + 1) / total) * 100);
+      const app = document.getElementById('app');
+
+      const options = q.options || [];
+
+      let optsHtml = '';
+      options.forEach((optText, optIdx) => {
+        const isSelected = trainingCurrentChoice === optIdx;
+        const letter = ['أ', 'ب', 'ج', 'د', 'هـ', 'و'][optIdx] || (optIdx + 1);
+
+        optsHtml += `
+          <button
+            type="button"
+            onclick="selectTrainingOption(${optIdx})"
+            class="w-full p-3.5 text-right border-2 transition-all pixel-shadow text-xs md:text-sm font-bold flex items-center gap-3 ${
+              isSelected
+                ? 'bg-sky-100 border-sky-600 text-sky-950 ring-2 ring-sky-400'
+                : 'bg-white border-slate-900 text-slate-800 hover:bg-slate-50'
+            }"
+          >
+            <span class="w-7 h-7 flex items-center justify-center border-2 font-black text-xs shrink-0 ${
+              isSelected ? 'bg-sky-600 text-white border-sky-700' : 'bg-slate-100 text-slate-800 border-slate-900'
+            }">
+              ${letter}
+            </span>
+            <span class="flex-1 text-right leading-relaxed">
+              ${optText}
+            </span>
+          </button>
+        `;
+      });
+
+      app.innerHTML = `
+        <div class="max-w-2xl mx-auto py-3 px-2 space-y-4">
+          <!-- Top Header -->
+          <div class="flex items-center justify-between">
+            <button
+              type="button"
+              onclick="showHome()"
+              class="px-2.5 py-1 bg-white border border-slate-900 text-slate-700 text-xs font-bold pixel-shadow"
+            >
+              خروج
+            </button>
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-black bg-sky-100 text-sky-900 border border-sky-400 px-2 py-0.5">
+                ورقة ${trainingSheetIndex + 1} من ${total}
+              </span>
+              <span class="text-xs font-bold text-slate-600">
+                ${activeTraining.category || 'فلسفة'}
+              </span>
+            </div>
+          </div>
+
+          <!-- The Sheet as Paper Notebook Format -->
+          <div class="relative bg-[#fffdfa] border-2 border-slate-900 p-5 md:p-8 pixel-shadow min-h-[360px] flex flex-col justify-between" style="box-shadow: 4px 6px 0px rgba(0,0,0,0.85);">
+            <!-- Paper Top Border Ring holes -->
+            <div class="flex justify-around absolute -top-2.5 left-0 right-0 px-6">
+              <span class="w-4 h-4 rounded-full bg-slate-800 border-2 border-white inline-block"></span>
+              <span class="w-4 h-4 rounded-full bg-slate-800 border-2 border-white inline-block"></span>
+              <span class="w-4 h-4 rounded-full bg-slate-800 border-2 border-white inline-block"></span>
+              <span class="w-4 h-4 rounded-full bg-slate-800 border-2 border-white inline-block"></span>
+            </div>
+
+            <div>
+              <!-- Sheet Number & Mini Pen -->
+              <div class="flex items-center justify-between mb-3 pt-2 border-b border-dashed border-slate-300 pb-2">
+                <span class="text-xs font-black text-sky-900 bg-sky-50 px-2 py-0.5 border border-sky-300">
+                  ورقة العمل رقم #${trainingSheetIndex + 1}
+                </span>
+                <span class="text-xs font-bold text-slate-600 flex items-center gap-1">
+                  <span>✍️ قلم أسود</span>
+                </span>
+              </div>
+
+              <!-- Question / Statement in Worksheet -->
+              <div class="mb-5">
+                <p class="text-sm md:text-base font-extrabold text-slate-900 leading-relaxed whitespace-pre-line">
+                  ${q.q || q.question}
+                </p>
+              </div>
+
+              <!-- Options Grid / List -->
+              <div class="space-y-2.5">
+                ${optsHtml}
+              </div>
+            </div>
+
+            <!-- Next Page CTA -->
+            <div class="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between">
+              <span class="text-xs text-slate-500 font-bold">
+                ${trainingCurrentChoice !== null ? '✓ تم تسجيل اختيارك بهدوء' : 'يرجى اختيار إجابة للمتابعة'}
+              </span>
+              <button
+                type="button"
+                onclick="nextTrainingSheet()"
+                ${trainingCurrentChoice === null ? 'disabled' : ''}
+                class="px-5 py-2.5 font-black text-xs md:text-sm pixel-bevel pixel-shadow pixel-press flex items-center gap-1.5 ${
+                  trainingCurrentChoice !== null
+                    ? 'bg-sky-600 hover:bg-sky-700 text-white cursor-pointer'
+                    : 'bg-slate-200 text-slate-400 cursor-not-allowed border border-slate-300'
+                }"
+              >
+                <span>المضي للصفحة الموالية</span>
+                <span>←</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Bottom Progress Bar (Advances as sheets are completed) -->
+          <div class="bg-white border-2 border-slate-900 p-2.5 pixel-shadow space-y-1.5">
+            <div class="flex items-center justify-between text-xs font-bold text-slate-700">
+              <span>تقدم إنجاز أوراق التدريب</span>
+              <span class="font-black text-sky-800">${progressPercent}% (${trainingSheetIndex + 1}/${total})</span>
+            </div>
+            <div class="w-full bg-slate-100 border border-slate-800 h-3 overflow-hidden">
+              <div
+                class="bg-sky-500 h-full transition-all duration-300"
+                style="width: ${progressPercent}%;"
+              ></div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function selectTrainingOption(optIdx) {
+      playClick();
+      trainingCurrentChoice = optIdx;
+      trainingAnswers[trainingSheetIndex] = optIdx;
+      renderCurrentSheet();
+    }
+
+    function nextTrainingSheet() {
+      if (trainingCurrentChoice === null) return;
+      playClick();
+
+      if (trainingSheetIndex + 1 < activeTraining.questions.length) {
+        startTrainingSheet(trainingSheetIndex + 1);
+      } else {
+        showTrainingFinished();
+      }
+    }
+
+    function showTrainingFinished() {
+      const app = document.getElementById('app');
+
+      app.innerHTML = `
+        <div class="max-w-md mx-auto py-8 px-3 space-y-5">
+          <div class="relative bg-[#fffdfa] border-2 border-slate-900 p-6 md:p-8 pixel-shadow text-center space-y-5" style="box-shadow: 4px 6px 0px rgba(0,0,0,0.85);">
+            <!-- Pen Icon -->
+            <div class="w-16 h-16 bg-sky-600 text-white rounded-full flex items-center justify-center mx-auto border-2 border-slate-900 pixel-shadow text-2xl">
+              ✍️
+            </div>
+
+            <!-- "جيد لقد إنتهينا" Message as required -->
+            <div class="space-y-2">
+              <h2 class="text-2xl font-black text-slate-900">
+                جيد لقد إنتهينا!
+              </h2>
+              <p class="text-xs md:text-sm text-slate-600 font-bold leading-relaxed">
+                تم حفظ كافة إجاباتك على أوراق العمل دون تنبيهك أثناء الحل. يمكنك الآن سحب ورقة الإصلاح الشاملة للاطلاع على النتيجة وتفاصيل الأخطاء والمستوى.
+              </p>
+            </div>
+
+            <!-- "عرض الإصلاح الآن" Button as required -->
+            <div class="pt-2">
+              <button
+                type="button"
+                onclick="openTrainingCorrectionDrawer()"
+                class="w-full py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm pixel-bevel pixel-shadow pixel-press flex items-center justify-center gap-2"
+              >
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                <span>عرض الإصلاح الآن</span>
+              </button>
+            </div>
+
+            <button
+              type="button"
+              onclick="showHome()"
+              class="w-full py-2 text-xs font-bold text-slate-600 hover:text-slate-900"
+            >
+              العودة إلى قائمة المدونات
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    // Pull-Down Drawer for Step-by-Step Corrections & Overall Level
+    function openTrainingCorrectionDrawer() {
+      playClick();
+      const questions = activeTraining.questions || [];
+      const total = questions.length;
+      let correctCount = 0;
+
+      questions.forEach((q, idx) => {
+        const studentChoice = trainingAnswers[idx];
+        const correctIdx = q.correct !== undefined ? q.correct : (q.correctIndex || 0);
+        if (studentChoice === correctIdx) {
+          correctCount++;
+        }
+      });
+
+      const scorePercent = total > 0 ? Math.round((correctCount / total) * 100) : 0;
+
+      // Evaluation Level: ممتاز / متوسط / ضعيف
+      let levelText = 'متوسط';
+      let levelColorClass = 'bg-amber-100 text-amber-900 border-amber-400';
+      if (scorePercent >= 75) {
+        levelText = 'ممتاز 🌟';
+        levelColorClass = 'bg-emerald-100 text-emerald-950 border-emerald-500';
+      } else if (scorePercent < 50) {
+        levelText = 'ضعيف (يحتاج مراجعة) ⚠️';
+        levelColorClass = 'bg-rose-100 text-rose-950 border-rose-400';
+      }
+
+      let reviewsHtml = '';
+      questions.forEach((q, idx) => {
+        const studentChoice = trainingAnswers[idx];
+        const correctIdx = q.correct !== undefined ? q.correct : (q.correctIndex || 0);
+        const isRight = studentChoice === correctIdx;
+        const opts = q.options || [];
+
+        reviewsHtml += `
+          <div class="p-3.5 border-2 ${isRight ? 'border-emerald-500 bg-emerald-50/40' : 'border-rose-400 bg-rose-50/40'} space-y-2">
+            <div class="flex items-center justify-between text-xs font-black">
+              <span class="px-2 py-0.5 ${isRight ? 'bg-emerald-600 text-white' : 'bg-rose-600 text-white'}">
+                الورقة ${idx + 1}
+              </span>
+              <span class="${isRight ? 'text-emerald-700' : 'text-rose-700'} font-black">
+                ${isRight ? 'إجابتك صحيحة ✓' : 'إجابتك غير دقيقة ✗'}
+              </span>
+            </div>
+
+            <p class="text-xs font-bold text-slate-900 leading-relaxed whitespace-pre-line">
+              ${q.q || q.question}
+            </p>
+
+            <div class="text-xs space-y-1 bg-white p-2.5 border border-slate-200">
+              <div class="flex items-start gap-1.5">
+                <span class="font-black text-slate-600 shrink-0">إجابتك:</span>
+                <span class="${isRight ? 'text-emerald-700 font-bold' : 'text-rose-700 font-bold line-through'}">
+                  ${opts[studentChoice] !== undefined ? opts[studentChoice] : 'لم تجب'}
+                </span>
+              </div>
+              ${!isRight ? `
+                <div class="flex items-start gap-1.5 text-emerald-800 font-bold">
+                  <span class="font-black shrink-0">الإصلاح النموذجي:</span>
+                  <span>${opts[correctIdx] || ''}</span>
+                </div>
+              ` : ''}
+              ${(q.exp || q.explanation) ? `
+                <div class="mt-2 pt-1.5 border-t border-slate-100 text-[11px] text-slate-600">
+                  <span class="font-bold text-bac-brown">إضاءة فلسفية: </span>
+                  <span>${q.exp || q.explanation}</span>
+                </div>
+              ` : ''}
+            </div>
+          </div>
+        `;
+      });
+
+      const drawerHtml = `
+        <div class="bg-white border-2 border-slate-900 max-w-2xl w-full max-h-[90vh] flex flex-col pixel-shadow my-auto">
+          <!-- Pull Down Handle Header -->
+          <div class="p-3 bg-slate-100 border-b border-slate-300 text-center cursor-pointer" onclick="closeModal()">
+            <div class="w-12 h-1.5 bg-slate-400 rounded-full mx-auto mb-1"></div>
+            <span class="text-[11px] font-bold text-slate-500">اسحب للأسفل أو انقر هنا للإغلاق ✕</span>
+          </div>
+
+          <!-- Body -->
+          <div class="p-5 overflow-y-auto space-y-4">
+            <!-- Results & Level Rating Header -->
+            <div class="p-4 bg-sky-50 border-2 border-sky-400 text-center space-y-2">
+              <span class="text-xs font-black text-sky-800">تقرير الإصلاح والتقييم النهائي</span>
+              <div class="flex items-center justify-center gap-3">
+                <span class="text-2xl font-black text-slate-900">${scorePercent}%</span>
+                <span class="px-2.5 py-1 text-xs font-black border ${levelColorClass}">
+                  المستوى: ${levelText}
+                </span>
+              </div>
+              <p class="text-xs font-bold text-slate-600">
+                أجبت بشكل صحيح على ${correctCount} من أصل ${total} أوراق عمل تدريبية.
+              </p>
+            </div>
+
+            <!-- Detailed Sheets List -->
+            <div class="space-y-3">
+              <h4 class="text-xs font-black text-slate-800">تفاصيل كل مرحلة وإصلاحها:</h4>
+              ${reviewsHtml}
+            </div>
+          </div>
+
+          <!-- Footer Actions -->
+          <div class="p-4 border-t border-slate-200 bg-slate-50 flex items-center justify-between gap-2">
+            <button
+              type="button"
+              onclick="showTrainingIntro(activeTraining);closeModal()"
+              class="px-4 py-2 bg-sky-600 text-white font-bold text-xs pixel-bevel pixel-press"
+            >
+              إعادة التدريب ↺
+            </button>
+            <button
+              type="button"
+              onclick="closeModal()"
+              class="px-4 py-2 border border-slate-400 text-slate-700 font-bold text-xs"
+            >
+              إغلاق الإصلاح
+            </button>
+          </div>
+        </div>
+      `;
+
+      openModal(drawerHtml);
+    }
+
+    // ==========================================
+    // ✍️ TRAINING WORKSHEETS ADMIN EDITOR
+    // ==========================================
+    let editingTrainingQuizId = null;
+    let editingTrainingSteps = [];
+
+    function openTrainingEditor(id) {
+      editingTrainingQuizId = id;
+      if (id) {
+        const q = currentQuizzes.find(x => x.id === id);
+        if (q && q.questions) {
+          editingTrainingSteps = q.questions.map(s => ({
+            q: s.q || s.question || '',
+            options: [...(s.options || ['', '', '', ''])],
+            correct: s.correct !== undefined ? s.correct : (s.correctIndex || 0),
+            exp: s.exp || s.explanation || ''
+          }));
+        }
+      } else {
+        editingTrainingSteps = [
+          { q: '', options: ['', '', '', ''], correct: 0, exp: '' }
+        ];
+      }
+
+      renderTrainingEditorModal();
+    }
+
+    function renderTrainingEditorModal() {
+      const q = editingTrainingQuizId ? currentQuizzes.find(x => x.id === editingTrainingQuizId) : null;
+      const titleVal = q ? q.title : '';
+      const catVal = q ? q.category : 'الإنية والغيرية';
+      const headlineVal = q ? (q.introHeadline || q.title) : '';
+      const descVal = q ? (q.description || '') : '';
+
+      let stepsHtml = '';
+      editingTrainingSteps.forEach((s, sIdx) => {
+        let optsHtml = '';
+        s.options.forEach((opt, optIdx) => {
+          optsHtml += `
+            <div class="flex items-center gap-1.5 p-1 border border-slate-300 bg-white">
+              <input
+                type="radio"
+                name="correct_sheet_${sIdx}"
+                ${s.correct === optIdx ? 'checked' : ''}
+                onchange="editingTrainingSteps[${sIdx}].correct = ${optIdx}"
+                title="تحديد كإجابة صحيحة للإصلاح"
+              />
+              <span class="text-xs font-bold text-slate-500 w-4">${['أ', 'ب', 'ج', 'د', 'هـ', 'و'][optIdx] || optIdx + 1}</span>
+              <input
+                type="text"
+                value="${opt.replace(/"/g, '&quot;')}"
+                oninput="editingTrainingSteps[${sIdx}].options[${optIdx}] = this.value"
+                placeholder="الخيار ${optIdx + 1}..."
+                class="flex-1 text-xs px-2 py-1 border border-slate-200"
+                required
+              />
+              ${s.options.length > 2 ? `
+                <button type="button" onclick="removeTrainingOption(${sIdx}, ${optIdx})" class="text-rose-500 font-bold px-1.5 text-xs">✕</button>
+              ` : ''}
+            </div>
+          `;
+        });
+
+        stepsHtml += `
+          <div class="p-3 border-2 border-slate-800 bg-slate-50 space-y-2.5">
+            <div class="flex items-center justify-between border-b pb-1">
+              <span class="text-xs font-black bg-sky-600 text-white px-2 py-0.5">
+                ورقة العمل #${sIdx + 1}
+              </span>
+              ${editingTrainingSteps.length > 1 ? `
+                <button type="button" onclick="removeTrainingStep(${sIdx})" class="text-rose-600 text-xs font-bold">حذف هذه الورقة</button>
+              ` : ''}
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-800 mb-1">نص الورقة / السؤال:</label>
+              <textarea
+                rows="2"
+                oninput="editingTrainingSteps[${sIdx}].q = this.value"
+                class="w-full text-xs p-2 border border-slate-300 bg-white"
+                placeholder="اكتب الإقرار أو السؤال الفلسفي المطلوب تحليله..."
+                required
+              >${s.q}</textarea>
+            </div>
+
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between">
+                <label class="text-xs font-bold text-slate-800">خيارات الإجابة:</label>
+                <button type="button" onclick="addTrainingOption(${sIdx})" class="text-[11px] font-bold text-sky-700">+ خيار إضافي</button>
+              </div>
+              ${optsHtml}
+            </div>
+
+            <div>
+              <label class="block text-[11px] font-bold text-slate-600 mb-1">إضاءة فلسفية وتفسير للإصلاح:</label>
+              <input
+                type="text"
+                value="${(s.exp || '').replace(/"/g, '&quot;')}"
+                oninput="editingTrainingSteps[${sIdx}].exp = this.value"
+                placeholder="تعليل سياق الموقف الفلسفي..."
+                class="w-full text-xs p-1.5 border border-slate-300 bg-white"
+              />
+            </div>
+          </div>
+        `;
+      });
+
+      const modalHtml = `
+        <div class="bg-white border-2 border-slate-900 max-w-2xl w-full max-h-[90vh] flex flex-col pixel-shadow my-auto">
+          <div class="p-4 border-b border-slate-300 bg-sky-50">
+            <h3 class="text-base font-black text-sky-950">
+              ${editingTrainingQuizId ? 'تعديل التدريب التطبيقي' : 'إنشاء تدريب تطبيقي جديد (أوراق عمل متتالية)'}
+            </h3>
+            <p class="text-xs text-slate-600">
+              أوراق عمل تفاعلية هادئة باللون الأزرق الفاتح تتيح للتلميذ الإجابة وسحب الإصلاح في النهاية.
+            </p>
+          </div>
+
+          <form onsubmit="saveTrainingEditorModal(event)" class="p-5 overflow-y-auto space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs font-bold mb-1">عنوان التدريب *</label>
+                <input
+                  type="text"
+                  id="trainTitleInput"
+                  value="${titleVal.replace(/"/g, '&quot;')}"
+                  placeholder="مثال: تدريب منهجي: تفكيك الإشكالية الفلسفية"
+                  class="w-full text-xs p-2 border border-slate-400 font-bold"
+                  required
+                />
+              </div>
+              <div>
+                <label class="block text-xs font-bold mb-1">المحور / الدرس</label>
+                <input
+                  type="text"
+                  id="trainCategoryInput"
+                  value="${catVal.replace(/"/g, '&quot;')}"
+                  class="w-full text-xs p-2 border border-slate-400 font-bold"
+                />
+              </div>
+            </div>
+
+            <!-- Custom Headline for Intro Page -->
+            <div>
+              <label class="block text-xs font-black text-sky-900 mb-1">
+                جملة البداية التفاعلية العريضة (تظهر في صفحة الانطلاق بجانب القلم الأسود) *
+              </label>
+              <input
+                type="text"
+                id="trainHeadlineInput"
+                value="${headlineVal.replace(/"/g, '&quot;')}"
+                placeholder="اكتب جملة البداية العريضة التي تود أن يراها التلميذ..."
+                class="w-full text-xs p-2 border-2 border-sky-500 font-black"
+                required
+              />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold mb-1">وصف أو توجيه (اختياري)</label>
+              <input
+                type="text"
+                id="trainDescInput"
+                value="${descVal.replace(/"/g, '&quot;')}"
+                placeholder="وصف مختصر للتدريب..."
+                class="w-full text-xs p-1.5 border border-slate-300"
+              />
+            </div>
+
+            <!-- Sheets list -->
+            <div class="space-y-3 pt-2">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-black text-slate-900">أوراق العمل (${editingTrainingSteps.length} أوراق):</span>
+                <button
+                  type="button"
+                  onclick="addTrainingStep()"
+                  class="px-2.5 py-1 bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold pixel-bevel"
+                >
+                  + إضافة ورقة عمل
+                </button>
+              </div>
+
+              <div class="space-y-3">
+                ${stepsHtml}
+              </div>
+            </div>
+
+            <div class="pt-3 border-t flex items-center justify-between">
+              <button
+                type="submit"
+                class="px-6 py-2.5 bg-sky-600 hover:bg-sky-700 text-white font-black text-xs pixel-bevel pixel-shadow pixel-press"
+              >
+                ${editingTrainingQuizId ? 'حفظ التعديلات' : 'حفظ التدريب وتوليد الرابط'}
+              </button>
+              <button
+                type="button"
+                onclick="closeModal()"
+                class="px-4 py-2 border border-slate-400 text-xs font-bold"
+              >
+                إلغاء
+              </button>
+            </div>
+          </form>
+        </div>
+      `;
+
+      openModal(modalHtml);
+    }
+
+    function addTrainingStep() {
+      playClick();
+      editingTrainingSteps.push({
+        q: '',
+        options: ['', '', '', ''],
+        correct: 0,
+        exp: ''
+      });
+      renderTrainingEditorModal();
+    }
+
+    function removeTrainingStep(idx) {
+      playClick();
+      if (editingTrainingSteps.length <= 1) {
+        alert('يجب توفر ورقة تدريب واحدة على الأقل');
+        return;
+      }
+      editingTrainingSteps.splice(idx, 1);
+      renderTrainingEditorModal();
+    }
+
+    function addTrainingOption(stepIdx) {
+      playClick();
+      if (editingTrainingSteps[stepIdx].options.length >= 6) {
+        alert('الحد الأقصى هو 6 خيارات');
+        return;
+      }
+      editingTrainingSteps[stepIdx].options.push('');
+      renderTrainingEditorModal();
+    }
+
+    function removeTrainingOption(stepIdx, optIdx) {
+      playClick();
+      if (editingTrainingSteps[stepIdx].options.length <= 2) {
+        alert('يجب توفر خيارين على الأقل');
+        return;
+      }
+      editingTrainingSteps[stepIdx].options.splice(optIdx, 1);
+      if (editingTrainingSteps[stepIdx].correct >= editingTrainingSteps[stepIdx].options.length) {
+        editingTrainingSteps[stepIdx].correct = editingTrainingSteps[stepIdx].options.length - 1;
+      }
+      renderTrainingEditorModal();
+    }
+
+    function saveTrainingEditorModal(e) {
+      e.preventDefault();
+      playClick();
+
+      const title = document.getElementById('trainTitleInput').value.trim();
+      const cat = document.getElementById('trainCategoryInput').value.trim() || 'فلسفة';
+      const headline = document.getElementById('trainHeadlineInput').value.trim() || title;
+      const desc = document.getElementById('trainDescInput').value.trim();
+
+      if (!title) {
+        alert('يرجى كتابة عنوان التدريب');
+        return;
+      }
+
+      for (let i = 0; i < editingTrainingSteps.length; i++) {
+        const s = editingTrainingSteps[i];
+        if (!s.q.trim()) {
+          alert(`الورقة رقم ${i + 1} لا تحتوي على نص!`);
+          return;
+        }
+        const validOpts = s.options.filter(o => o.trim().length > 0);
+        if (validOpts.length < 2) {
+          alert(`الورقة رقم ${i + 1} يجب أن تحتوي على خيارين على الأقل!`);
+          return;
+        }
+      }
+
+      const cleanQuestions = editingTrainingSteps.map((s, idx) => ({
+        id: `t_${idx + 1}_${Date.now()}`,
+        q: s.q.trim(),
+        options: s.options.map(o => o.trim()).filter(Boolean),
+        correct: Math.min(s.correct, s.options.filter(Boolean).length - 1),
+        exp: s.exp?.trim() || 'إضاءة فلسفية توضيحية للورقة التدريبية.'
+      }));
+
+      const newTraining = {
+        id: editingTrainingQuizId || `train_${Date.now()}`,
+        title: title,
+        category: cat,
+        introHeadline: headline,
+        description: desc,
+        blogType: 'training',
+        questions: cleanQuestions,
+        matchingPairs: [],
+        timesPlayed: 0,
+        averageScore: 100
+      };
+
+      if (editingTrainingQuizId) {
+        const idx = currentQuizzes.findIndex(x => x.id === editingTrainingQuizId);
+        if (idx !== -1) currentQuizzes[idx] = newTraining;
+      } else {
+        currentQuizzes.unshift(newTraining);
+      }
+
+      saveStorageQuizzes(currentQuizzes);
+      closeModal();
+      showAdmin();
+
+      // Show Share Dialog
+      const shareLink = `${window.location.origin}${window.location.pathname}?quiz=${newTraining.id}`;
+      openShareLinkModal(newTraining, shareLink);
+    }
+    
+    // Initialize View based on URL params or show Home
+    const urlParams = new URLSearchParams(window.location.search);
+    const quizParam = urlParams.get('quiz');
+    if (quizParam) {
+      startActivity(quizParam);
+    } else {
+      showHome();
+    }
+  </script>
+</body>
+</html>
